@@ -1,0 +1,34 @@
+/* 
+var(--color-red)
+var(--color-gray6)
+var(--color-gray5)
+var(--color-gray3)
+var(--color-gray1)
+var(--color-dark)
+var(--color-dark2)
+ */
+
+:root {
+  --color-green: #43C951;
+  --color-white0: #FFFFFF;
+  --color-cards: #FCFCFC;
+  --color-white: #F2F2F2;
+  --color-gray3: #828282;
+  --color-gray2: #4F4F4F;
+
+  font-size: 16px;
+}
+
+/*:root.contrast {*/
+/*  --color-red: var(--color-gray1);*/
+/*  --color-dark: var(--color-gray1);*/
+/*  --color-dark2: var(--color-gray1);*/
+/*}*/
+
+/*:root.middle {*/
+/*  font-size: 1.1px;*/
+/*}*/
+
+/*:root.grand {*/
+/*  font-size: 1.25px;*/
+/*}*/

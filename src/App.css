@@ -36,3 +36,11 @@
     transform: rotate(360deg);
   }
 }
+
+header, nav, main, footer, section, article {
+    border: 1px solid blue;
+}
+
+div, p, ul, li, h1, h2, h3, h4, img, a {
+    border: 1px solid red;
+}
