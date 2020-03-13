@@ -13,28 +13,29 @@ import Washing from "./components/Washing/Washing";
 import GreenButtonBig from "./components/common/buttons/GreenButtonBig";
 import LightButton from "./components/common/buttons/LightButton";
 import GreenButtonSmall from "./components/common/buttons/GreenButtonSmall";
+import DryCleaningContainer from "./components/DryCleaning/DryCleaningContainer";
+
 
 
 function App() {
     return (
-        <div className="App">
+        <div>
             <Header/>
-            <GreenButtonBig text={'Заказать услугу'}/>
-            <LightButton text={'Полный список'}/>
-            <GreenButtonSmall text={'Заказать'}/>
-            {/*<main>*/}
-            {/*    <Route exact path='/' render={() => <Main/>}/>*/}
-            {/*    <Route path='/drycleaning' render={() => <DryCleaning/>}/>*/}
-            {/*    <Route exact path='/drycleaning' render={() => <Redirect to={'/drycleaning/appart'}/>}/>*/}
 
-            {/*    <Route path='/cleaning' render={() => <Cleaning/>}/>*/}
-            {/*    <Route exact path='/cleaning' render={() => <Redirect to={'/cleaning/furniture'}/>}/>*/}
+            <main className="limitations">
+                <Route exact path='/' render={() => <Main/>}/>
 
-            {/*    <Route path='/washing' render={() => <Washing/>}/>*/}
-            {/*    <Route exact path='/washing' render={() => <Redirect to={'/washing/windowplast'}/>}/>*/}
-            {/*</main>*/}
+                <Route path='/drycleaning/:path' render={() => <DryCleaningContainer/>}/>
+                <Route exact path='/drycleaning' render={() => <Redirect to={'/drycleaning/appart'}/>}/>
 
-            {/*<Footer/>*/}
+                <Route path='/cleaning' render={() => <Cleaning/>}/>
+                <Route exact path='/cleaning' render={() => <Redirect to={'/cleaning/furniture'}/>}/>
+
+                <Route path='/washing' render={() => <Washing/>}/>
+                <Route exact path='/washing' render={() => <Redirect to={'/washing/windowplast'}/>}/>
+            </main>
+
+            <Footer/>
         </div>
     );
 }

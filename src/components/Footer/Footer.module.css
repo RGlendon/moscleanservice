@@ -1,5 +1,100 @@
-.size {
-    height: 300px;
+/*импорт стилей элементов*/
+/*.menu {*/
+/*    composes: menu from "./FooterElementsStyles/FooterMenu.css";*/
+/*}*/
 
-    background-color: green;
+
+/*стили блока*/
+.common {
+    background-color: var(--color-green);
+
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 20px;
+
+    color: var(--color-cards);
+}
+
+.wrapper {
+    width: 55%;
+    max-width: 1440px;
+    display: flex;
+    justify-content: space-between;
+
+    margin: auto;
+    padding: 60px 0;
+}
+
+.listItem {
+    margin-top: 10px;
+}
+
+.listItem:first-of-type {
+    margin-top: 0;
+}
+
+.link {
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 20px;
+
+    text-decoration: none;
+
+    color: var(--color-cards);
+}
+
+.menu {
+    list-style-type: none;
+    padding: 0;
+}
+
+.logoContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /*justify-content: center;*/
+}
+
+.logo {
+    width: 103px;
+    margin-top: 10px;
+}
+
+.subscribe {
+    margin-top: 15px;
+    width: 222px;
+}
+
+.contacts {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.contactsRow {
+    margin-top: 15px;
+    display: flex;
+    align-items: center;
+}
+
+.social {
+    margin-left: 20px;
+    width: 26px;
+    /*height: 24px;*/
+    object-fit: cover;
+}
+
+.phone {
+    height: 24px;
+    width: 35px;
+}
+
+.developer {
+    /*font-family: HelveticaNeueCyr;*/
+    font-style: normal;
+    font-weight: normal;
+    font-size: 11px;
+    line-height: 20px;
 }

@@ -1,0 +1,55 @@
+.common {
+    /*font-family: HelveticaNeueCyr;*/
+    width: 210px;
+    height: 275px;
+    background-color: var(--color-cards);
+    color: var(--color-gray2);
+    box-shadow: 1px 1px 10px rgba(133, 133, 133, 0.35);
+    border-radius: 5px;
+    box-sizing: border-box;
+
+    cursor: pointer;
+
+    padding-top: 25px;
+    padding-bottom: 35px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.containerOne {
+    display: flex;
+    flex-direction: column;
+}
+
+.icon {
+}
+
+.title {
+    margin-top: 16px;
+    text-align: center;
+
+    font-style: normal;
+    font-weight: 300;
+    font-size: 16px;
+    line-height: 20px;
+}
+
+.containerTwo {
+    width: fit-content;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.price {
+    text-align: center;
+    margin-bottom: 35px;
+
+    font-style: normal;
+    font-weight: 550;
+    font-size: 15px;
+    line-height: 15px;
+
+    letter-spacing: 0.02em;
+}
