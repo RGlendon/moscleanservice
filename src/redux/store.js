@@ -1,8 +1,9 @@
 import {combineReducers, createStore} from "redux";
+import commonReducer from "./commonReducer";
 
 
 let reducers = combineReducers({
-    // three: threeReducer,
+    refs: commonReducer,
 });
 
 let store = createStore(reducers);

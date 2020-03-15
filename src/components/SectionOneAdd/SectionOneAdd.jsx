@@ -14,7 +14,7 @@ const SectionOneAdd = (props) => {
                 <h1 className={styles.tagline}>{`${title} - `}<br/>{` не ваша забота`}</h1>
                 <GreenButtonBig text={'Заказать услугу'}/>
                 <div className={styles.pipka}>
-                    <Scroll />
+                    <Scroll/>
                 </div>
             </div>
 

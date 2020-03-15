@@ -25,7 +25,7 @@ function App() {
             <main className="limitations">
                 <Route exact path='/' render={() => <Main/>}/>
 
-                <Route path='/drycleaning/:path' render={() => <DryCleaningContainer/>}/>
+                <Route path='/drycleaning/:path' render={() => <DryCleaningContainer n={1}/>}/>
                 <Route exact path='/drycleaning' render={() => <Redirect to={'/drycleaning/appart'}/>}/>
 
                 <Route path='/cleaning' render={() => <Cleaning/>}/>

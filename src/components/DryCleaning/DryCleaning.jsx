@@ -1,7 +1,7 @@
 import React from "react";
 import styles from "./DryCleaning.module.css"
 import {NavLink, Route} from "react-router-dom";
-import OtherComponents from "../OtherСomponents/OtherComponents";
+
 import SectionOneAdd from "../SectionOneAdd/SectionOneAdd";
 import firstBg from "../../assets/images/sectionOneBgDryCleaning.jpg";
 import fiveBg from "../../assets/images/sectionFive.jpg";
@@ -15,17 +15,25 @@ import SectionTwoAddMatress from "../SectionTwoAdd/pages/SectionTwoAddMatress";
 
 
 const DryCleaning = (props) => {
+
     // debugger
+
+    let url = props.match.params.path;
+
     return (
-        <div className={styles.size}>
+        <div className={styles.common}>
             <SectionOneAdd title={'Химчистка'} background={firstBg}/>
-            <div className={styles.menu}>
-                <span><NavLink to="/drycleaning/furniture" className={styles.link}
-                               activeClassName={styles.link_active}>Мебель</NavLink></span>
-                <span><NavLink to="/drycleaning/matress" className={styles.link}
-                               activeClassName={styles.link_active}>Матрац</NavLink></span>
-                <span><NavLink to="/drycleaning/carpet" className={styles.link}
-                               activeClassName={styles.link_active}>Ковер</NavLink></span>
+            <div className={styles.menu}  id="dry">
+                <span className={`${styles.linkContainer} ${url === 'furniture' && styles.linkActive}`}>
+                    <NavLink className={styles.link} to="/drycleaning/furniture">Химчистка мебели</NavLink>
+                </span>
+                <span className={`${styles.linkContainer} ${url === 'matress' && styles.linkActive}`}>
+                    <NavLink className={styles.link} to="/drycleaning/matress">Химчистка матрасов</NavLink>
+                </span>
+                <span className={`${styles.linkContainer} ${url === 'carpet' && styles.linkActive}`}>
+                    <NavLink className={styles.link} to="/drycleaning/carpet">Химчистка ковров</NavLink>
+                </span>
+                <div className={styles.lamp}></div>
             </div>
             <Route exact path='/drycleaning/furniture' render={() => <SectionTwoAddFurniture/>}/>
             <Route exact path='/drycleaning/matress' render={() => <SectionTwoAddMatress/>}/>
