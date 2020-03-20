@@ -7,6 +7,7 @@ const GreenButtonSmall = (props) => {
     return (
         <button onMouseOver={() => {setHover(true)}}
                 onMouseOut={() => {setHover(false)}}
+                onClick={props.onClick}
                 className={`${styles.look} ${styles.small} ${isHover && styles.isHover}`}
         >{props.text}
         </button>

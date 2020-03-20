@@ -1,0 +1,22 @@
+.checkbox {
+    /*opacity: 0;*/
+    /*width: 40px;*/
+    display: none;
+}
+
+.labelForRadio {
+    width: 70px;
+    height: 50px;
+    background-color: #F43838;
+    cursor: pointer;
+
+    display: block;
+}
+
+.labelForRadio:nth-of-type(2) {
+    background-color: #ebfd80;
+}
+
+.labelForRadio:nth-of-type(3) {
+    background-color: blueviolet;
+}

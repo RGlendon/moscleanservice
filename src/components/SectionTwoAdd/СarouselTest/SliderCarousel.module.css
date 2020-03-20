@@ -1,0 +1,62 @@
+.common {
+    margin: 50px auto;
+    position: relative;
+
+}
+
+.container {
+    width: 80%;
+    overflow: hidden;
+    /*overflow: scroll;*/
+    margin: auto;
+
+}
+
+.movingContainer {
+    display: flex;
+    transition: all .5s;
+}
+
+.item {
+    display: flex;
+    justify-content: center;
+
+}
+
+.item:last-of-type {
+    margin-right: 0;
+}
+
+.arrowLeft {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    left: 60px;
+}
+
+.arrowRigth {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    right: 60px;
+}
+
+.gloMain {
+}
+
+.gloContainer {
+}
+
+.gloItem {
+}
+
+/*++++++++++++*/
+
+.active {
+transition: all 0s;
+}
+
+.movingContainer.active {
+    cursor: grabbing;
+transform: scale(1.02);
+}
