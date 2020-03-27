@@ -1,20 +1,15 @@
-const ADD_REF = 'ADD_REF';
+const OPEN_MENU = 'OPEN_MENU';
 
 const initialState = {
-    refsLink: [],
+    isOpenMenu: false,
 };
 
 function commonReducer(state = initialState, action) {
-    let i = 1;
     switch (action.type) {
-        case ADD_REF:
-            const ref = {
-                id: i++,
-                value: action.ref
-            };
+        case OPEN_MENU:
             return {
                 ...state,
-                refsLink: [ ...state.refs, ref],
+                isOpenMenu: action.status,
             };
         default:
             return state;
@@ -23,4 +18,4 @@ function commonReducer(state = initialState, action) {
 
 export default commonReducer;
 
-export const addRefsDrycleaning = (ref) => ({type: ADD_REF, ref});
+export const toggleMenu = (status) => ({type: OPEN_MENU, status});

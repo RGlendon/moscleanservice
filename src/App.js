@@ -13,19 +13,25 @@ import Washing from "./components/Washing/Washing";
 import GreenButtonBig from "./components/common/buttons/GreenButtonBig";
 import LightButton from "./components/common/buttons/LightButton";
 import GreenButtonSmall from "./components/common/buttons/GreenButtonSmall";
-import DryCleaningContainer from "./components/DryCleaning/DryCleaningContainer";
 import PopupExample from "./components/PopupExample/PopupExample";
 import PopupOrder from "./components/PopupExample/PopupOrder";
 import Calculator from "./components/Calculator/Calculator";
-import SliderCarousel from "./components/SectionTwoAdd/СarouselTest/SliderСarousel";
+import SliderCarousel from "./components/SectionTwoAdd/СarouselTestRun/SliderСarousel";
+import styles from "./components/SectionTwoAdd/Carouserl/SliderSwipeCarousel.module.css";
+import window1 from "./assets/iconsTwo/window1.svg";
+import window2 from "./assets/iconsTwo/window2.svg";
+import SliderSwipeCarousel from "./components/SectionTwoAdd/Carouserl/SliderSwipeСarousel";
+import SliderCarouselManager from "./components/common/SliderSwipeCarouselManager/SliderСarouselManager";
+import ContainerParent from "./components/forTest/ContainerParent";
+import Menu from "./components/Menu/Menu";
 
 
+function App(props) {
 
-function App() {
     return (
         <div>
             <Header/>
-
+            <Menu/>
 
             {/*<main className="limitations">*/}
 
@@ -41,14 +47,27 @@ function App() {
             {/*<Route exact path='/washing' render={() => <Redirect to={'/washing/windowplast'}/>}/>*/}
             {/*</main>*/}
 
+
+            {/*<SliderSwipeCarousel/>*/}
             <Footer/>
             {/*<Calculator/>*/}
-            <SliderCarousel slidesToShow={4} isInfinity={true}
-                            responsive={[
-                                {breakpoint: 1024, slidesToShow: 3},
-                                {breakpoint: 768, slidesToShow: 2},
-                                {breakpoint: 375, slidesToShow: 1}
-                                ]}/>
+            {/*<SliderCarousel slidesToShow={4} isInfinity={true}*/}
+            {/*                responsive={[*/}
+            {/*                    {breakpoint: 1024, slidesToShow: 3},*/}
+            {/*                    {breakpoint: 768, slidesToShow: 2},*/}
+            {/*                    {breakpoint: 375, slidesToShow: 1}*/}
+            {/*                    ]}/>*/}
+
+            {/*<SliderCarouselManager slidesToShow={4} isInfinity={true}*/}
+            {/*                responsive={[*/}
+            {/*                    {breakpoint: 1024, slidesToShow: 3},*/}
+            {/*                    {breakpoint: 768, slidesToShow: 2},*/}
+            {/*                    {breakpoint: 375, slidesToShow: 1}*/}
+            {/*                    ]}/>*/}
+
+
+
+            {/*<ContainerParent/>*/}
 
 
             {/*<PopupOrder/>*/}

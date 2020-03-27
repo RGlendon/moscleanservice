@@ -1,0 +1,12 @@
+.slider {
+}
+
+/*++++++++++++*/
+
+.active {
+transition: all 0s;
+}
+
+.slider.active {
+    cursor: grabbing;
+}

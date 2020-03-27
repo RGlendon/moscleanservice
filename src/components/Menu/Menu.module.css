@@ -1,0 +1,103 @@
+.wrapper {
+    width: 0;
+    height: 100%;
+    position: fixed;
+
+    top: 0;
+    left: 0;
+    z-index: 10;
+}
+
+.wrapper.openMenu {
+    width: 100%;
+
+}
+
+.layer {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: 10;
+    background-color: rgba(0,0,0,0.4);
+    opacity: 0;
+    transition: opacity .3s;
+}
+.openMenu .layer {
+    opacity: 1;
+}
+
+.container {
+    height: 100%;
+    width: 325px;
+
+    box-sizing: border-box;
+
+    z-index: 11;
+    position: absolute;
+    top: 0;
+    left: -325px;
+    background-color: var(--color-white); /* Black*/
+    overflow-x: hidden; /* Disable horizontal scroll */
+    padding-top: 25px;
+    padding-left: 60px;
+
+    transition: all 0.3s; /* 0.5 second transition effect to slide in the sidenav */
+}
+
+.openMenu .container {
+    left: 0;
+}
+
+.logoGreen {
+    margin-bottom: 60px;
+}
+
+.link {
+    font-family: HelveticaNeueCyr;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 17px;
+    line-height: 25px;
+
+    display: block;
+    text-decoration: none;
+    transition: 0.1s;
+    margin-bottom: 12px;
+
+    color: var(--color-gray2);
+}
+
+.link:hover {
+    opacity: .7;
+}
+
+.sales {
+    text-transform: uppercase;
+    color: var(--color-red);
+}
+
+.sidenav {
+
+}
+
+
+
+.closebtn {
+    position: absolute;
+    top: 25px;
+    right: 25px;
+    margin-left: 50px;
+    transition: all .1s linear;
+    cursor: pointer;
+}
+
+.closebtn:hover {
+    filter: brightness(70%);
+}
+
+
+
+@media screen and (max-height: 450px) {
+    .sidenav {padding-top: 15px;}
+    .sidenav a {font-size: 18px;}
+}

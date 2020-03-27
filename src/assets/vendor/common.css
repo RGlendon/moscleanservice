@@ -1,19 +1,11 @@
-/* 
-var(--color-red)
-var(--color-gray6)
-var(--color-gray5)
-var(--color-gray3)
-var(--color-gray1)
-var(--color-dark)
-var(--color-dark2)
- */
+@import "./Fonts/HelveticaNeueCyr.css";
 
 :root {
-    --color-green: #43C951;
     --color-green-tr: rgba(67, 201, 81, 0.95);
-    --color-white0: #FFFFFF;
+    --color-green: #43C951;
+    --color-green-dark: #339B03;
     --color-cards: #FCFCFC;
-    --color-white: #F2F2F2;
+    --color-white: #FCFCFC;
     --color-red: #F43838;
     --color-gray3: #828282;
     --color-gray2: #4F4F4F;

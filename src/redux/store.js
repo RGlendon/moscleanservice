@@ -3,7 +3,7 @@ import commonReducer from "./commonReducer";
 
 
 let reducers = combineReducers({
-    refs: commonReducer,
+    common: commonReducer,
 });
 
 let store = createStore(reducers);
