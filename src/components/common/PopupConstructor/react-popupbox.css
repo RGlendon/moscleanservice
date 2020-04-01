@@ -74,7 +74,7 @@
 }
 
 .popupbox-content {
-  padding: 20px 24px 30px;
+  padding: 50px 80px 50px;
 }
 
 .popupbox-titleBar {
@@ -85,16 +85,16 @@
   border-bottom: 1px #ccc solid;
 }
 
-.popupbox-btn--close {
-  transition: all .5s;
-  position: absolute;
-  right: 11px;
-  top: 11px;
-  color: #c1c1c1;
-  background: none;
-  border: none;
-  outline: none;
-}
+/*.popupbox-btn--close {*/
+/*  transition: all .5s;*/
+/*  position: absolute;*/
+/*  right: 11px;*/
+/*  top: 11px;*/
+/*  color: #c1c1c1;*/
+/*  background: none;*/
+/*  border: none;*/
+/*  outline: none;*/
+/*}*/
 
 .popupbox-btn--close:hover {
   color: #000;

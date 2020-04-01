@@ -15,28 +15,39 @@ const Footer = () => {
             <div className={styles.wrapper}>
                 <ul className={styles.menu}>
                     {/*доработать промотку наверх при переходе*/}
-                    <li className={styles.listItem}><a href="/drycleaning/furniture" className={styles.link}
-                    >Химчистка</a></li>
-                    <li className={styles.listItem}><NavLink to="/cleaning/appart" className={styles.link}
-                                                             activeClassName={styles.link_active}>Уборка</NavLink></li>
-                    <li className={styles.listItem}><NavLink to="/washing/windowplast" className={styles.link}
-                                                             activeClassName={styles.link_active}>Мытье
-                        окон/фасадов</NavLink></li>
+                    <li className={styles.listItem}>
+                        <a href="/drycleaning/furniture" className={styles.link}>Химчистка</a>
+                    </li>
+                    <li className={styles.listItem}>
+                        <NavLink to="/cleaning/appart" className={styles.link}
+                                 activeClassName={styles.link_active}>Уборка</NavLink>
+                    </li>
+                    <li className={styles.listItem}>
+                        <NavLink to="/washing/windowplast" className={styles.link}
+                                 activeClassName={styles.link_active}>Мытье окон / балконов</NavLink>
+                    </li>
+                    <li className={styles.listItem}>
+                        <NavLink to="/washing/windowplast" className={styles.link}
+                                 activeClassName={styles.link_active}>Мытье фасадов</NavLink>
+                    </li>
 
-                    <li className={styles.listItem}><NavLink to="#" className={styles.link}
-                                                             activeClassName={styles.link_active}>Наши цены</NavLink>
+                    <li className={styles.listItem}>
+                        <NavLink to="#" className={styles.link}
+                                 activeClassName={styles.link_active}>Наши цены</NavLink>
                     </li>
-                    <li className={styles.listItem}><NavLink to="#" className={styles.link}
-                                                             activeClassName={styles.link_active}>АКЦИИ</NavLink></li>
-                    <li className={styles.listItem}><NavLink to="#" className={styles.link}
-                                                             activeClassName={styles.link_active}>Контакты</NavLink>
+                    <li className={styles.listItem}>
+                        <NavLink to="#" className={styles.link}
+                                 activeClassName={styles.link_active}>АКЦИИ</NavLink>
                     </li>
-                    <li className={styles.listItem}><NavLink to="#" className={styles.link}
-                                                             activeClassName={styles.link_active}>Политика
-                        конфиденциальности</NavLink></li>
-                    <li className={styles.listItem}><NavLink to="#" className={styles.link}
-                                                             activeClassName={styles.link_active}>Пользовательское
-                        соглашение</NavLink></li>
+                    <li className={styles.listItem}>
+                        <NavLink to="#" className={styles.link}
+                                 activeClassName={styles.link_active}>Контакты</NavLink>
+                    </li>
+                    <li className={styles.listItem}>
+                        <NavLink to="#" className={styles.link}
+                                 activeClassName={styles.link_active}>Пользовательское
+                            соглашение</NavLink>
+                    </li>
                 </ul>
                 <div className={styles.logoContainer}>
                     <img className={styles.logo} src={logo} alt="логотип"/>

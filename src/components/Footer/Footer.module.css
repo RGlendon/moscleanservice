@@ -17,8 +17,9 @@
 }
 
 .wrapper {
-    width: 55%;
-    max-width: 1440px;
+    width: 85%;
+    max-width: 795px;
+    /*max-width: 1440px;*/
     display: flex;
     justify-content: space-between;
 

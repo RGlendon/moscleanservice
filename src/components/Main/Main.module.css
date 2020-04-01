@@ -1,5 +1,11 @@
-.size {
-    height: 500px;
+.general {
+    position: relative;
+}
 
-    background-color: darkgray;
+.slides {
+    z-index: 5;
+}
+
+.carousel {
+    z-index: 0;
 }

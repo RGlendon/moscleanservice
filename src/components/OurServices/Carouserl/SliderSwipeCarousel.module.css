@@ -1,0 +1,45 @@
+.common {
+    margin: 50px auto 0;
+    position: relative;
+
+}
+
+.container {
+    width: 89%;
+    overflow: hidden;
+    margin: auto;
+
+}
+
+.movingContainer {
+    display: flex;
+    transition: all .5s;
+    height: calc(100% + 20px);
+}
+
+.item {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 285px;
+}
+
+.item:last-of-type {
+    margin-right: 0;
+}
+
+.arrowLeft {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    left: 60px;
+    cursor: pointer;
+}
+
+.arrowRigth {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    right: 60px;
+    cursor: pointer;
+}

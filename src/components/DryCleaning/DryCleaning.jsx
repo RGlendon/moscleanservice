@@ -2,16 +2,16 @@ import React from "react";
 import styles from "./DryCleaning.module.css"
 import {NavLink, Route} from "react-router-dom";
 
-import SectionOneAdd from "../SectionOneAdd/SectionOneAdd";
+import SectionOne from "../SectionOne/SectionOne";
 import firstBg from "../../assets/images/sectionOneBgDryCleaning.jpg";
 import fiveBg from "../../assets/images/sectionFive.jpg";
 import SectionFiveAdd from "../SectionFiveAdd/SectionFiveAdd";
 import SectionFourAdd from "../SectionFourAdd/SectionFourAdd";
-import SectionThreeAdd from "../SectionThreeAdd/SectionThreeAdd";
+import Strengths from "../Strenghts/Strengths";
 
-import SectionTwoAddCarpet from "../SectionTwoAdd/pages/SectionTwoAddCarpet";
-import SectionTwoAddFurniture from "../SectionTwoAdd/pages/SectionTwoAddFurniture";
-import SectionTwoAddMatress from "../SectionTwoAdd/pages/SectionTwoAddMatress";
+import SectionTwoAddCarpet from "../OurServices/pages/SectionTwoAddCarpet";
+import SectionTwoAddFurniture from "../OurServices/pages/SectionTwoAddFurniture";
+import SectionTwoAddMatress from "../OurServices/pages/SectionTwoAddMatress";
 
 
 const DryCleaning = (props) => {
@@ -22,7 +22,7 @@ const DryCleaning = (props) => {
 
     return (
         <div className={styles.common}>
-            <SectionOneAdd title={'Химчистка'} background={firstBg}/>
+            <SectionOne title={'Химчистка'} background={firstBg}/>
             <div className={styles.menu}  id="dry">
                 <span className={`${styles.linkContainer} ${url === 'furniture' && styles.linkActive}`}>
                     <NavLink className={styles.link} to="/drycleaning/furniture">Химчистка мебели</NavLink>
@@ -40,7 +40,7 @@ const DryCleaning = (props) => {
             <Route exact path='/drycleaning/carpet' render={() => <SectionTwoAddCarpet/>}/>
 
 
-            <SectionThreeAdd/>
+            <Strengths/>
             <SectionFourAdd/>
             <SectionFiveAdd background={fiveBg}/>
         </div>

@@ -145,7 +145,7 @@
 }
 
 .social {
-    height: 20px;
+    height: 17px;
     margin-right: 15px;
 }
 
@@ -182,7 +182,7 @@
 }
 
 .phone {
-    height: 20px;
+    height: 18px;
     margin-right: 10px;
     fill: var(--color-white);
     transition: all 0.3s;

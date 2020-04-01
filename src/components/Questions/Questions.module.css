@@ -1,0 +1,94 @@
+.general {
+    font-family: HelveticaNeueCyr;
+    font-style: normal;
+    color: var(--color-gray2);
+    padding: 90px 112px;
+}
+
+.title {
+    font-weight: bold;
+    font-size: 35px;
+    line-height: 39px;
+}
+
+.wrapper {
+    margin: 70px 115px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.column {
+    width: 48%;
+}
+
+.accordion {
+    background-color: transparent;
+    color: var(--color-gray2);
+    cursor: pointer;
+    margin-top: 27px;
+    padding-bottom: 10px;
+    width: 100%;
+    text-align: left;
+    font-weight: normal;
+    font-size: 17px;
+    line-height: 35px;
+    border: none;
+    border-bottom: 1px solid #C4C4C4;
+    outline: none;
+    transition: 0.4s;
+}
+
+.accordion:first-of-type {
+    margin-top: 0;
+}
+
+
+/*.active, .accordion:hover {*/
+/*    background-color: #dbdbdb;*/
+/*}*/
+
+/* Style the accordion panel. Note: hidden by default */
+/*.panel {*/
+/*    padding: 0 18px;*/
+/*    background-color: white;*/
+/*    display: none;*/
+/*    overflow: hidden;*/
+/*}*/
+
+.panel {
+    padding: 0 18px;
+    background-color: transparent;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.2s ease-out;
+}
+
+.content {
+    padding-top: 10px;
+}
+
+.accordion:after {
+    content: '\002B'; /* Unicode character for "plus" sign (+) '\02795' */
+    font-size: 35px;
+    color: var(--color-green);
+    float: right;
+    margin-left: 5px;
+}
+
+.active:after {
+    content: '\2212'; /* Unicode character for "minus" sign (-) "\2796" */
+}
+
+
+.wrapperMore {
+    display: flex;
+    justify-content: center;
+}
+
+.addText {
+    font-weight: normal;
+    font-size: 17px;
+    line-height: 28px;
+    width: 208px;
+    margin-right: 4%;
+}

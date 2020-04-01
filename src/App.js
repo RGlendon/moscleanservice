@@ -10,77 +10,82 @@ import {Redirect, Route} from "react-router-dom";
 import DryCleaning from "./components/DryCleaning/DryCleaning";
 import Cleaning from "./components/Cleaning/Cleaning";
 import Washing from "./components/Washing/Washing";
-import GreenButtonBig from "./components/common/buttons/GreenButtonBig";
+import GreenButton from "./components/common/buttons/GreenButton";
 import LightButton from "./components/common/buttons/LightButton";
 import GreenButtonSmall from "./components/common/buttons/GreenButtonSmall";
-import PopupExample from "./components/PopupExample/PopupExample";
-import PopupOrder from "./components/PopupExample/PopupOrder";
+import PopupExample from "./components/Popups/PopupExample";
+import PopupOrderButton from "./components/Popups/PopupOrder/PopupOrderButton";
 import Calculator from "./components/Calculator/Calculator";
-import SliderCarousel from "./components/SectionTwoAdd/СarouselTestRun/SliderСarousel";
-import styles from "./components/SectionTwoAdd/Carouserl/SliderSwipeCarousel.module.css";
+
+
 import window1 from "./assets/iconsTwo/window1.svg";
 import window2 from "./assets/iconsTwo/window2.svg";
-import SliderSwipeCarousel from "./components/SectionTwoAdd/Carouserl/SliderSwipeСarousel";
-import SliderCarouselManager from "./components/common/SliderSwipeCarouselManager/SliderСarouselManager";
+import SliderSwipeCarousel from "./components/OurServices/Carouserl/SliderSwipeСarousel";
+
 import ContainerParent from "./components/forTest/ContainerParent";
 import Menu from "./components/Menu/Menu";
+import TestForm from "./components/forTest/testForm/TestForm";
+import NewTestForm from "./components/forTest/testForm/NewTestForm";
+import {PopupboxContainer} from "./components/common/PopupConstructorNew/PopupboxContainer";
+import PopupAskButton from "./components/Popups/PopupAsk/PopupAskButton";
+import SectionOneCard from "./components/SlideShow/SlideShowCardOne/SectionOneCard";
+import firstBg from "./assets/images/sectionOneBgDryCleaning.jpg";
+import SectionOne from "./components/SectionOne/SectionOne";
+
+import SectionFiveAdd from "./components/SectionFiveAdd/SectionFiveAdd";
+import SalesCardOne from "./components/SalesShow/SalesCards/SalesCardOne";
+import Questions from "./components/Questions/Questions";
+import PopupAskContent from "./components/Popups/PopupAsk/PopupAskContent";
+import SlideShow from "./components/SlideShow/SlideShow";
 
 
 function App(props) {
 
     return (
         <div>
-            <Header/>
-            <Menu/>
+            {/*<Header/>*/}
+            {/*<Menu/>*/}
 
-            {/*<main className="limitations">*/}
+            <main className="limitations">
+                {/*<SliderSwipeCarousel/>*/}
+                {/*<Route exact path='/' render={() => <Main/>}/>*/}
+                <SlideShow/>
+                {/*<PopupAskContent/>*/}
+                {/*<Route path='/drycleaning/:path' render={() => <DryCleaning/>}/>*/}
+                {/*<Route exact path='/drycleaning' render={() => <Redirect to={'/drycleaning/appart'}/>}/>*/}
 
-            {/*<Route exact path='/' render={() => <Main/>}/>*/}
+                {/*<Route path='/cleaning' render={() => <Cleaning/>}/>*/}
+                {/*<Route exact path='/cleaning' render={() => <Redirect to={'/cleaning/furniture'}/>}/>*/}
 
-            {/*<Route path='/drycleaning/:path' render={() => <DryCleaningContainer/>}/>*/}
-            {/*<Route exact path='/drycleaning' render={() => <Redirect to={'/drycleaning/appart'}/>}/>*/}
+                {/*<Route path='/washing' render={() => <Washing/>}/>*/}
+                {/*<Route exact path='/washing' render={() => <Redirect to={'/washing/windowplast'}/>}/>*/}
+            </main>
+            {/*<SalesShow/>*/}
+            {/*<SlideShow/>*/}
+            {/*<Questions/>*/}
 
-            {/*<Route path='/cleaning' render={() => <Cleaning/>}/>*/}
-            {/*<Route exact path='/cleaning' render={() => <Redirect to={'/cleaning/furniture'}/>}/>*/}
-
-            {/*<Route path='/washing' render={() => <Washing/>}/>*/}
-            {/*<Route exact path='/washing' render={() => <Redirect to={'/washing/windowplast'}/>}/>*/}
-            {/*</main>*/}
-
-
+            {/*<Calculator/>*/}
             {/*<SliderSwipeCarousel/>*/}
             <Footer/>
-            {/*<Calculator/>*/}
-            {/*<SliderCarousel slidesToShow={4} isInfinity={true}*/}
-            {/*                responsive={[*/}
-            {/*                    {breakpoint: 1024, slidesToShow: 3},*/}
-            {/*                    {breakpoint: 768, slidesToShow: 2},*/}
-            {/*                    {breakpoint: 375, slidesToShow: 1}*/}
-            {/*                    ]}/>*/}
-
-            {/*<SliderCarouselManager slidesToShow={4} isInfinity={true}*/}
-            {/*                responsive={[*/}
-            {/*                    {breakpoint: 1024, slidesToShow: 3},*/}
-            {/*                    {breakpoint: 768, slidesToShow: 2},*/}
-            {/*                    {breakpoint: 375, slidesToShow: 1}*/}
-            {/*                    ]}/>*/}
 
 
+            {/*<TestForm/>*/}
 
             {/*<ContainerParent/>*/}
+            {/*<NewTestForm/>*/}
+            {/*            <PopupAskButton/>*/}
+            {/*            <PopupOrderButton/>*/}
 
-
-            {/*<PopupOrder/>*/}
+            {/*<PopupOrderButton/>*/}
+            {/*<PopupOrderButton/>*/}
+            {/*<PopupOrderButton/>*/}
+            {/*<PopupOrderButton/>*/}
+            {/*<PopupOrderButton/>*/}
             {/*<div className="uCalc_269199"></div>*/}
-            {/*{*/}
-            {/*    // let widgetOptions269199 = {bg_color: "transparent"};*/}
-            {/*    (function () {*/}
-            {/*        var a = document.createElement("script"), h = "head";*/}
-            {/*        a.async = true;*/}
-            {/*        a.src = (document.location.protocol == "https:" ? "https:" : "http:") + "//ucalc.pro/api/widget.js?id=269199&t=" + Math.floor(new Date() / 18e5);*/}
-            {/*        document.getElementsByTagName(h)[0].appendChild(a)*/}
-            {/*    })()*/}
-            {/*}*/}
+
+
+            {/*PopupboxContainer обязательный компонент. Один на все popup'ы*/}
+            <PopupboxContainer/>
         </div>
     );
 }

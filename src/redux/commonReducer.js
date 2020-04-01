@@ -1,7 +1,13 @@
 const OPEN_MENU = 'OPEN_MENU';
+const UPDATE_ADDINFO = 'UPDATE_ADDINFO';
 
 const initialState = {
     isOpenMenu: false,
+    addInfo: {
+            typeOfWork: 'maintenanceСleaning',
+            meters: 40,
+            price: 1600
+        }
 };
 
 function commonReducer(state = initialState, action) {
@@ -11,6 +17,11 @@ function commonReducer(state = initialState, action) {
                 ...state,
                 isOpenMenu: action.status,
             };
+        case UPDATE_ADDINFO:
+            return {
+                ...state,
+                addInfo: action.data,
+            };
         default:
             return state;
     }
@@ -19,3 +30,5 @@ function commonReducer(state = initialState, action) {
 export default commonReducer;
 
 export const toggleMenu = (status) => ({type: OPEN_MENU, status});
+
+export const updateAddInfo = (data) => ({type: UPDATE_ADDINFO, data});

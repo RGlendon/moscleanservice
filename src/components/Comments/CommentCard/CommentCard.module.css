@@ -1,0 +1,42 @@
+.common {
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    position: relative;
+}
+
+.bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+}
+
+.bg::after {
+    content: '';
+    display: block;
+    width: 100%;
+    height: 100%;
+    background-color: #EBF9EA;
+    opacity: 0.8;
+}
+
+.ava {
+    width: 55px;
+    height: 55px;
+    border-radius: 50%;
+    z-index: 1;
+    margin: 0;
+}
+
+.name {
+    margin-top: 20px;
+    z-index: 1;
+}

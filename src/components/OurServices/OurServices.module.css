@@ -1,0 +1,22 @@
+.common {
+    font-family: HelveticaNeueCyr;
+    font-style: normal;
+    color: var(--color-gray2);
+
+    padding-top: calc(50px + 80px);
+
+    position: relative;
+    top: -80px;
+
+    /*background-color: #F43838;*/
+}
+
+.title {
+    font-weight: bold;
+    font-size: 35px;
+    line-height: 39px;
+
+    width: 85%;
+    margin: auto;
+}
+

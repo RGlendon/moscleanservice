@@ -1,6 +1,6 @@
 import React from "react";
 import styles from "./SectionFiveAdd.module.css";
-import GreenButtonBig from "../common/buttons/GreenButtonBig";
+import GreenButton from "../common/buttons/GreenButton";
 import Scroll from "../common/Scroll/Scroll";
 
 const SectionFiveAdd = (props) => {
@@ -16,7 +16,7 @@ const SectionFiveAdd = (props) => {
                     <h2 className={styles.alarm}>Получи скидку* при первом заказе на любую уборку!</h2>
                 {/*</div>*/}
                 <div className={styles.button}>
-                    <GreenButtonBig text={'Заказать услугу'}/>
+                    <GreenButton text={'Заказать услугу'}/>
                 </div>
             </div>
 

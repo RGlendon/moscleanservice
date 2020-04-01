@@ -1,19 +1,12 @@
-.look {
-    width: 204px;
-    height: 50px;
-
+.general {
     background-color: var(--color-green);
     color: var(--color-white);
 
-    /*font-family: HelveticaNeueCyr;*/
+    font-family: HelveticaNeueCyr;
     font-style: normal;
     font-weight: 550;
     font-size: 17px;
     line-height: 17px;
-
-    -webkit-box-sizing: content-box;
-    -moz-box-sizing: content-box;
-    box-sizing: content-box;
 
     box-sizing: border-box;
 
@@ -21,11 +14,34 @@
     border-radius: 5px;
 
     transition: all 0.3s ease;
+    cursor: pointer;
 }
 
-.small {
+.general:disabled {
+    cursor: default;
+    border: 1px solid rgba(0, 0, 0, .3);
+    color: rgba(0, 0, 0, .3);
+    background-color: transparent;
+}
+
+.smallSize {
     width: 110px;
     height: 35px;
+}
+
+.middleSize {
+    width: 204px;
+    height: 50px;
+}
+
+.bigSize {
+    width: 300px;
+    height: 50px;
+}
+
+.commonSize {
+    width: 100%;
+    height: 100%;
 }
 
 .isHover {
@@ -33,5 +49,4 @@
     color: var(--color-green);
 
     border: 3px solid var(--color-green);
-    box-sizing: border-box;
 }
