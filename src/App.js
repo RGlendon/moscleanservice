@@ -37,6 +37,9 @@ import SalesCardOne from "./components/SalesShow/SalesCards/SalesCardOne";
 import Questions from "./components/Questions/Questions";
 import PopupAskContent from "./components/Popups/PopupAsk/PopupAskContent";
 import SlideShow from "./components/SlideShow/SlideShow";
+import SalesShow from "./components/SalesShow/SalesShow";
+
+
 
 
 function App(props) {
@@ -47,9 +50,10 @@ function App(props) {
             {/*<Menu/>*/}
 
             <main className="limitations">
-                {/*<SliderSwipeCarousel/>*/}
+                <SliderSwipeCarousel/>
                 {/*<Route exact path='/' render={() => <Main/>}/>*/}
-                <SlideShow/>
+                {/*<SlideShow/>*/}
+                {/*<SalesShow/>*/}
                 {/*<PopupAskContent/>*/}
                 {/*<Route path='/drycleaning/:path' render={() => <DryCleaning/>}/>*/}
                 {/*<Route exact path='/drycleaning' render={() => <Redirect to={'/drycleaning/appart'}/>}/>*/}

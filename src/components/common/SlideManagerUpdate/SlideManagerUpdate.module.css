@@ -1,5 +1,5 @@
 .slider {}
-
+.dot {}
 /*++++++++++++*/
 
 .active {}
@@ -9,6 +9,7 @@
     cursor: grabbing;
 }
 
-.activeDot {
+.dot.activeDot {
     background-color: var(--color-green);
 }
+

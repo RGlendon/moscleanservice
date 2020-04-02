@@ -7,7 +7,6 @@ import image3 from "../../assets/images/image3.jpg";
 
 import Calculator from "../Calculator/Calculator";
 import Scroll from "../common/Scroll/Scroll";
-import SlideManager from "../common/SlideManager/SlideManager";
 import SlideManagerUpdate from "../common/SlideManagerUpdate/SlideManagerUpdate";
 
 

@@ -30,12 +30,13 @@ class SliderSwipeCarousel extends Component {
             prevButton: this.prevButton.current,
             nextButton: this.nextButton.current,
             options: {
-                isInfinity: true,
-                isLooped: false,
-                slidesToShow: 5,
+                isInfinity: false,
+                isLooped: true,
+                slidesToShow: 2,
                 canSwim: true,
-                delay: 2000,
+                delay: 0,
                 speed: .5,
+                direction: 'vertical'
             },
             // responsive: [
             //     {breakpoint: 1280, slidesToShow: 4},

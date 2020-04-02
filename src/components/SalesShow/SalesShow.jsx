@@ -6,7 +6,7 @@ import image2 from "../../assets/images/5th2.jpg";
 import image3 from "../../assets/images/5th3.jpg";
 
 import SalesCardOne from "./SalesCards/SalesCardOne";
-import SlideManager from "../common/SlideManager/SlideManager";
+import SlideManagerUpdate from "../common/SlideManagerUpdate/SlideManagerUpdate";
 
 
 
@@ -21,15 +21,15 @@ class SalesShow extends Component {
     }
 
     componentDidMount() {
-        this.SlideShowManager = new SlideManager({
+        this.SlideShowManager = new SlideManagerUpdate({
             commonCarousel: this.commonCarousel.current,
             containerCarousel: this.containerCarousel.current,
             sliderCarousel: this.sliderCarousel.current,
             dotsCarousel: this.dotsCarousel.current,
             options: {
-                isInfinity: true,
+                isLooped: true,
                 slidesToShow: 1,
-                delay: 2000,
+                delay: 0,
                 speed: 1,
                 direction: 'vertical'
             },
@@ -51,7 +51,6 @@ class SalesShow extends Component {
                         <div className={styles.item}>
                             <SectionFiveCard background={image3} salesCard={<SalesCardOne/>}/>
                         </div>
-
                     </div>
                 </div>
                 <div className={styles.dots} ref={this.dotsCarousel}>
