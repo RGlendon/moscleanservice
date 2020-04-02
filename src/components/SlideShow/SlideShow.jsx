@@ -8,6 +8,7 @@ import image3 from "../../assets/images/image3.jpg";
 import Calculator from "../Calculator/Calculator";
 import Scroll from "../common/Scroll/Scroll";
 import SlideManager from "../common/SlideManager/SlideManager";
+import SlideManagerUpdate from "../common/SlideManagerUpdate/SlideManagerUpdate";
 
 
 
@@ -23,16 +24,17 @@ class SlideShow extends Component {
     }
 
     componentDidMount() {
-        this.SlideShowManager = new SlideManager({
+        this.SlideShowManager = new SlideManagerUpdate({
             commonCarousel: this.commonCarousel.current,
             containerCarousel: this.containerCarousel.current,
             sliderCarousel: this.sliderCarousel.current,
             dotsCarousel: this.dotsCarousel.current,
             options: {
                 isInfinity: true,
-                isLooped: true,
+                isLooped: false,
+                canSwim: true,
                 slidesToShow: 1,
-                delay: 2000,
+                delay: 0,
                 speed: 1
             },
         });

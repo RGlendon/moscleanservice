@@ -8,6 +8,7 @@ import window2 from "../../../assets/iconsTwo/window2.svg";
 import arrowLeftSwipe from "./../../../assets/arrowLeftSwipe.svg"
 import arrowRightSwipe from "./../../../assets/arrowRightSwipe.svg";
 import SlideManager from "../../common/SlideManager/SlideManager";
+import SlideManagerUpdate from "../../common/SlideManagerUpdate/SlideManagerUpdate";
 
 
 
@@ -22,7 +23,7 @@ class SliderSwipeCarousel extends Component {
     }
 
     componentDidMount() {
-        this.SliderManager = new SlideManager({
+        this.SliderManager = new SlideManagerUpdate({
             commonCarousel: this.commonCarousel.current,
             containerCarousel: this.containerCarousel.current,
             sliderCarousel: this.sliderCarousel.current,
@@ -30,16 +31,18 @@ class SliderSwipeCarousel extends Component {
             nextButton: this.nextButton.current,
             options: {
                 isInfinity: true,
+                isLooped: false,
                 slidesToShow: 5,
                 canSwim: true,
-                speed: 0.5,
+                delay: 2000,
+                speed: .5,
             },
-            responsive: [
-                {breakpoint: 1280, slidesToShow: 4},
-                {breakpoint: 1024, slidesToShow: 3},
-                {breakpoint: 768, slidesToShow: 2},
-                {breakpoint: 375, slidesToShow: 1},
-            ],
+            // responsive: [
+            //     {breakpoint: 1280, slidesToShow: 4},
+            //     {breakpoint: 1024, slidesToShow: 3},
+            //     {breakpoint: 768, slidesToShow: 2},
+            //     {breakpoint: 375, slidesToShow: 1},
+            // ],
         });
         this.SliderManager.init();
     }
@@ -53,29 +56,29 @@ class SliderSwipeCarousel extends Component {
                             <Card icon={window1} price={'от 990 ₽'} title={'ПЕРВЫЙ ЭЛЕМЕНТ'}/>
                         </div>
                         <div className={styles.item}>
-                            <Card icon={window2} price={'от 990 ₽'} title={'Балкон более 4-х створок'}/>
+                            <Card icon={window2} price={'от 990 ₽'} title={'2'}/>
                         </div>
                         <div className={styles.item}>
-                            <Card icon={window2} price={'от 990 ₽'} title={'Мойка фасадов'}/>
+                            <Card icon={window2} price={'от 990 ₽'} title={'3'}/>
                         </div>
                         <div className={styles.item}>
-                            <Card icon={window1} price={'от 990 ₽'} title={'Балкон до 4-х створок'}/>
+                            <Card icon={window1} price={'от 990 ₽'} title={'4'}/>
                         </div>
-                        <div className={styles.item}>
-                            <Card icon={window2} price={'от 990 ₽'} title={'Балкон более 4-х створок'}/>
-                        </div>
-                        <div className={styles.item}>
-                            <Card icon={window2} price={'от 990 ₽'} title={'Мойка фасадов'}/>
-                        </div>
-                        <div className={styles.item}>
-                            <Card icon={window1} price={'от 990 ₽'} title={'Балкон до 4-х створок'}/>
-                        </div>
-                        <div className={styles.item}>
-                            <Card icon={window2} price={'от 990 ₽'} title={'Балкон более 4-х створок'}/>
-                        </div>
-                        <div className={styles.item}>
-                            <Card icon={window2} price={'от 990 ₽'} title={'Балкон более 4-х створок'}/>
-                        </div>
+                        {/*<div className={styles.item}>*/}
+                        {/*    <Card icon={window2} price={'от 990 ₽'} title={'Балкон более 4-х створок'}/>*/}
+                        {/*</div>*/}
+                        {/*<div className={styles.item}>*/}
+                        {/*    <Card icon={window2} price={'от 990 ₽'} title={'Мойка фасадов'}/>*/}
+                        {/*</div>*/}
+                        {/*<div className={styles.item}>*/}
+                        {/*    <Card icon={window1} price={'от 990 ₽'} title={'Балкон до 4-х створок'}/>*/}
+                        {/*</div>*/}
+                        {/*<div className={styles.item}>*/}
+                        {/*    <Card icon={window2} price={'от 990 ₽'} title={'Балкон более 4-х створок'}/>*/}
+                        {/*</div>*/}
+                        {/*<div className={styles.item}>*/}
+                        {/*    <Card icon={window2} price={'от 990 ₽'} title={'Балкон более 4-х створок'}/>*/}
+                        {/*</div>*/}
                         <div className={styles.item}>
                             <Card icon={window2} price={'от 990 ₽'} title={'ПОСЛЕДНИЙ ЭЛЕМЕНТ'}/>
                         </div>
