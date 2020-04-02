@@ -1,0 +1,14 @@
+.slider {}
+
+/*++++++++++++*/
+
+.active {}
+
+.slider.active {
+    transition: all 0s;
+    cursor: grabbing;
+}
+
+.activeDot {
+    background-color: var(--color-green);
+}
