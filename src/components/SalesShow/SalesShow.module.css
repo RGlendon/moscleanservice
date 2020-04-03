@@ -4,14 +4,13 @@
 
 .container {
     width: 100%;
-    /*overflow: hidden;*/
+    overflow: hidden;
 }
 
 .movingContainer {
     display: flex;
     flex-direction: column;
     height: 650px;
-    background-color: #F43838;
 }
 
 .item {

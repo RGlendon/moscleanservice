@@ -143,6 +143,7 @@ class SlideManagerUpdate extends Component {
             this.startTimer();
         }
     };
+
     //=================================
     currentSlide = (n) => {
 
@@ -176,6 +177,7 @@ class SlideManagerUpdate extends Component {
     //==================================
     prevSlide = () => {
         this.sliderCarousel.style.transition = `all ${this.speed}s`;
+
         if (this.isLooped || this.position > 0) {
             --this.position;
 
@@ -202,7 +204,6 @@ class SlideManagerUpdate extends Component {
     };
 
     //==============================================
-
     addClass() {
         this.sliderCarousel.style.transition = `all ${this.speed}s`;
         this.sliderCarousel.classList.add(`${styles.slider}`);
@@ -242,6 +243,7 @@ class SlideManagerUpdate extends Component {
             } else {
                 this.slidesToShow = slidesToShowDefault;
             }
+
             this.addClass();
         };
 
@@ -249,7 +251,7 @@ class SlideManagerUpdate extends Component {
         window.addEventListener('resize', checkResponse);
     }
 
-    // //==================================================
+    //==================================================
     handleMouseDown = (e) => {
         this.sliderCarousel.style.transition = `all 0s`;
 
@@ -278,7 +280,7 @@ class SlideManagerUpdate extends Component {
         }
 
         for (let i = 0; i < (this.slides.length - this.slidesToShow); i++) {
-            if (- i * this.sizeSlide> this.scrollToDirection) {
+            if (- i * this.sizeSlide > this.scrollToDirection) {
                 if (this.walk < 0) {
                     this.position = i + 1;
                 }
@@ -289,8 +291,6 @@ class SlideManagerUpdate extends Component {
         }
 
         this.scrollToPosition();
-
-        console.log(this.position)
 
         if (this.dots && this.isInfinity) {
             // this.changeDot(this.position - 1);
@@ -303,10 +303,9 @@ class SlideManagerUpdate extends Component {
 
     handleMouseMove = (e) => {
         if (!this.isDown) return;
-        e.preventDefault();
+        // e.preventDefault();
         let currentCoordinate = (this.axis === 'X') ? e.pageX : e.pageY + this.scrollToDirection;
         this.walk = currentCoordinate - this.startCoordinate;
-        console.log(this.walk);
 
         this.sliderCarousel.style.transform = `translate${this.axis}(${this.scrollToDirection + this.walk}px)`;
     };

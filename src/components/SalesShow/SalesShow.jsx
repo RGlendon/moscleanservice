@@ -27,11 +27,11 @@ class SalesShow extends Component {
             sliderCarousel: this.sliderCarousel.current,
             dotsCarousel: this.dotsCarousel.current,
             options: {
-                isLooped: true,
+                isInfinity: true,
                 slidesToShow: 1,
-                delay: 0,
+                delay: 2000,
                 speed: 1,
-                direction: 'vertical'
+                axis: 'Y'
             },
         });
         this.SlideShowManager.init();

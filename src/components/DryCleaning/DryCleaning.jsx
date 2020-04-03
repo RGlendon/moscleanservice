@@ -1,6 +1,6 @@
 import React from "react";
 import styles from "./DryCleaning.module.css"
-import {NavLink, Route} from "react-router-dom";
+import {NavLink, Route, withRouter} from "react-router-dom";
 
 import SectionOne from "../SectionOne/SectionOne";
 import firstBg from "../../assets/images/sectionOneBgDryCleaning.jpg";
@@ -14,9 +14,7 @@ import SectionTwoAddFurniture from "../OurServices/pages/SectionTwoAddFurniture"
 import SectionTwoAddMatress from "../OurServices/pages/SectionTwoAddMatress";
 
 
-const DryCleaning = (props) => {
-
-    // debugger
+let DryCleaning = (props) => {
 
     let url = props.match.params.path;
 
@@ -47,4 +45,4 @@ const DryCleaning = (props) => {
     );
 }
 
-export default DryCleaning;
+export default withRouter(DryCleaning);

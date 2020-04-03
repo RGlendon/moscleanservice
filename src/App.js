@@ -15,12 +15,11 @@ import LightButton from "./components/common/buttons/LightButton";
 import GreenButtonSmall from "./components/common/buttons/GreenButtonSmall";
 import PopupExample from "./components/Popups/PopupExample";
 import PopupOrderButton from "./components/Popups/PopupOrder/PopupOrderButton";
-import Calculator from "./components/Calculator/Calculator";
 
 
 import window1 from "./assets/iconsTwo/window1.svg";
 import window2 from "./assets/iconsTwo/window2.svg";
-import SliderSwipeCarousel from "./components/OurServices/Carouserl/SliderSwipeСarousel";
+
 
 import ContainerParent from "./components/forTest/ContainerParent";
 import Menu from "./components/Menu/Menu";
@@ -34,10 +33,8 @@ import SectionOne from "./components/SectionOne/SectionOne";
 
 import SectionFiveAdd from "./components/SectionFiveAdd/SectionFiveAdd";
 import SalesCardOne from "./components/SalesShow/SalesCards/SalesCardOne";
-import Questions from "./components/Questions/Questions";
 import PopupAskContent from "./components/Popups/PopupAsk/PopupAskContent";
-import SlideShow from "./components/SlideShow/SlideShow";
-import SalesShow from "./components/SalesShow/SalesShow";
+
 
 
 
@@ -46,30 +43,26 @@ function App(props) {
 
     return (
         <div>
-            {/*<Header/>*/}
-            {/*<Menu/>*/}
+            <Header/>
+            <Menu/>
 
             <main className="limitations">
-                <SliderSwipeCarousel/>
-                {/*<Route exact path='/' render={() => <Main/>}/>*/}
-                {/*<SlideShow/>*/}
-                {/*<SalesShow/>*/}
-                {/*<PopupAskContent/>*/}
-                {/*<Route path='/drycleaning/:path' render={() => <DryCleaning/>}/>*/}
-                {/*<Route exact path='/drycleaning' render={() => <Redirect to={'/drycleaning/appart'}/>}/>*/}
 
-                {/*<Route path='/cleaning' render={() => <Cleaning/>}/>*/}
-                {/*<Route exact path='/cleaning' render={() => <Redirect to={'/cleaning/furniture'}/>}/>*/}
+                <Route exact path='/' render={() => <Main/>}/>
+
+                {/*<PopupAskContent/>*/}
+                <Route path='/drycleaning/:path' render={() => <DryCleaning/>}/>
+                <Route exact path='/drycleaning' render={() => <Redirect to={'/drycleaning/appart'}/>}/>
+
+                <Route path='/cleaning' render={() => <Cleaning/>}/>
+                <Route exact path='/cleaning' render={() => <Redirect to={'/cleaning/furniture'}/>}/>
 
                 {/*<Route path='/washing' render={() => <Washing/>}/>*/}
                 {/*<Route exact path='/washing' render={() => <Redirect to={'/washing/windowplast'}/>}/>*/}
             </main>
-            {/*<SalesShow/>*/}
-            {/*<SlideShow/>*/}
-            {/*<Questions/>*/}
 
-            {/*<Calculator/>*/}
-            {/*<SliderSwipeCarousel/>*/}
+
+
             <Footer/>
 
 
@@ -89,7 +82,7 @@ function App(props) {
 
 
             {/*PopupboxContainer обязательный компонент. Один на все popup'ы*/}
-            <PopupboxContainer/>
+            {/*<PopupboxContainer/>*/}
         </div>
     );
 }

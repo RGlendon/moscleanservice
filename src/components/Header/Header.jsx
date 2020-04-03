@@ -1,4 +1,4 @@
-import React, {useState} from "react";
+import React from "react";
 import styles from "./Header.module.css"
 import logo from "../../assets/Logo.svg";
 import {NavLink} from "react-router-dom";
@@ -9,9 +9,8 @@ import {connect} from "react-redux";
 import vk from "./../../assets/contacts/VK.svg";
 import inst from "./../../assets/contacts/Inst.svg";
 import station from "./../../assets/contacts/Station.svg";
-import mobile from "./../../assets/contacts/Mobile.svg";
 import arrowDown from "./../../assets/arrowDown.svg";
-import arrowLeft from "./../../assets/arrowLeft.svg";
+
 
 const Header = (props) => {
 

@@ -33,8 +33,9 @@ class SlideShow extends Component {
                 isLooped: false,
                 canSwim: true,
                 slidesToShow: 1,
-                delay: 0,
-                speed: 1
+                delay: 2000,
+                speed: 1,
+                direction: 'right'
             },
         });
         this.SlideShowManager.init();

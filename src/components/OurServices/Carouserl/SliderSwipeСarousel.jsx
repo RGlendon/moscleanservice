@@ -7,7 +7,7 @@ import window2 from "../../../assets/iconsTwo/window2.svg";
 
 import arrowLeftSwipe from "./../../../assets/arrowLeftSwipe.svg"
 import arrowRightSwipe from "./../../../assets/arrowRightSwipe.svg";
-import SlideManager from "../../common/SlideManager/SlideManager";
+
 import SlideManagerUpdate from "../../common/SlideManagerUpdate/SlideManagerUpdate";
 
 
