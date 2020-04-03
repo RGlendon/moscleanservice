@@ -11,7 +11,7 @@ class SlideManagerUpdate extends Component {
                     dotsCarousel,
                     prevButton,
                     nextButton,
-                    options: {isInfinity, isLooped, slidesToShow, canSwim, delay, speed, direction},
+                    options: {isInfinity, isLooped, slidesToShow, canDrag, delay, speed, axis, direction},
                     responsive
 
                 }) {
@@ -26,21 +26,24 @@ class SlideManagerUpdate extends Component {
         this.isInfinity = isInfinity;
         this.isLooped = isLooped;
         this.slidesToShow = slidesToShow ? slidesToShow : 1;
-        this.canSwim = canSwim;
+        this.canDrag = canDrag;
         this.delay = delay ? delay + speed * 1000 : 0;
         this.speed = speed;
-        this.direction = direction === 'vertical' ? 'Y' : 'X';
+        this.axis = (axis === 'Y') ? 'Y' : 'X';
+        this.direction = !(direction === 'down' || direction === 'right');
         // ============== innerOptions ====================
         this.timerId = null;
         this.slides = sliderCarousel.children;
         this.dots = dotsCarousel ? dotsCarousel.children : null;
         this.position = 0;
         this.dotPosition = 0;
-        this.widthSlide = Math.floor(100 / slidesToShow);
+        this.sizeSlide = (this.axis === 'X')
+            ? this.sliderCarousel.offsetWidth / this.slidesToShow
+            : this.containerCarousel.offsetHeight / this.slidesToShow;
         this.responsive = responsive;
         this.isDown = false;
         this.startCoordinate = null;
-        this.scrollLeft = 0;
+        this.scrollToDirection = 0;
         this.walk = 0;
         // debugger
     }
@@ -49,10 +52,10 @@ class SlideManagerUpdate extends Component {
     init() {
         this.addClass();
         if (this.prevButton && this.nextButton) {
-            this.prevButton.addEventListener('click', () => {this.prevSlide()});
-            this.nextButton.addEventListener('click', () => {this.nextSlide()});
+            this.prevButton.addEventListener('click', () => {this.direction ? this.prevSlide() : this.nextSlide()});
+            this.nextButton.addEventListener('click', () => {this.direction ? this.nextSlide() : this.prevSlide()});
         }
-        if (this.canSwim) {
+        if (this.canDrag) {
             this.sliderCarousel.addEventListener('mousedown', (e) => {this.handleMouseDown(e)});
             this.sliderCarousel.addEventListener('mouseleave', () => {this.handleMouseLeave()});
             this.sliderCarousel.addEventListener('mouseup', () => {this.handleMouseUp()});
@@ -83,6 +86,15 @@ class SlideManagerUpdate extends Component {
     }
 
     //===============================
+
+
+    scrollToPosition = () => {
+        this.scrollToDirection = - this.position * this.sizeSlide;
+        this.sliderCarousel.style.transform = `translate${this.axis}(${this.scrollToDirection}px)`;
+    };
+
+
+    //===============================
     cloneElements = () => {
         this.sliderCarousel.style.transition = `none`;
 
@@ -94,22 +106,19 @@ class SlideManagerUpdate extends Component {
         }
 
         this.position = this.slidesToShow;
-        this.scrollLeft = -this.sliderCarousel.offsetWidth * this.position * this.widthSlide / 100;
-        this.sliderCarousel.style.transform = `translateX(${this.scrollLeft}px)`;
+        this.scrollToPosition();
     };
 
     jump = () => {
         if (this.position >= this.slides.length - this.slidesToShow) {
             this.sliderCarousel.style.transition = `none`;
             this.position = this.slidesToShow;
-            this.scrollLeft = -this.sliderCarousel.offsetWidth * this.position * this.widthSlide / 100;
-            this.sliderCarousel.style.transform = `translateX(${this.scrollLeft}px)`;
+            this.scrollToPosition();
         }
         if (this.position === 0) {
             this.sliderCarousel.style.transition = `none`;
             this.position = this.slides.length - this.slidesToShow * 2;
-            this.scrollLeft = -this.sliderCarousel.offsetWidth * this.position * this.widthSlide / 100;
-            this.sliderCarousel.style.transform = `translateX(${this.scrollLeft}px)`;
+            this.scrollToPosition();
         }
     };
 
@@ -119,7 +128,8 @@ class SlideManagerUpdate extends Component {
     };
 
     run = () => {
-        this.nextSlide();
+        this.direction ? this.nextSlide() : this.prevSlide();
+
         if (this.dots) {
             this.changeDot();
         }
@@ -143,14 +153,8 @@ class SlideManagerUpdate extends Component {
         if (this.isInfinity) {
             this.position = n + this.slidesToShow;
         }
-        // this.sliderCarousel.style.transform = `translateX(-${this.position * this.widthSlide}%)`;
-        // this.sliderCarousel.style.transform = `translate${this.direction}(-${this.position * this.widthSlide}%)`;
 
-        // this.scrollLeft = - this.sliderCarousel.offsetWidth * this.position * this.widthSlide / 100;
-        this.scrollLeft = (this.direction === 'X')
-            ? - this.sliderCarousel.offsetWidth * this.position * this.widthSlide / 100
-            : - this.sliderCarousel.offsetHeight * this.position * this.widthSlide / 100 ;
-        this.sliderCarousel.style.transform = `translate${this.direction}(${this.scrollLeft}px)`;
+        this.scrollToPosition();
     };
 
     changeDot = (n) => {
@@ -178,12 +182,8 @@ class SlideManagerUpdate extends Component {
             if (this.position < 0) {
                 this.position = this.slides.length - this.slidesToShow;
             }
-            // this.sliderCarousel.style.transform = `translateX(-${this.position * this.widthSlide}%)`;
-            // this.scrollLeft = -this.sliderCarousel.offsetWidth * this.position * this.widthSlide / 100;
-            this.scrollLeft = (this.direction === 'X')
-                ? - this.sliderCarousel.offsetWidth * this.position * this.widthSlide / 100
-                : - this.containerCarousel.offsetHeight * this.position * this.widthSlide / 100 ;
-            this.sliderCarousel.style.transform = `translate${this.direction}(${this.scrollLeft}px)`;
+
+            this.scrollToPosition();
         }
     };
 
@@ -196,12 +196,8 @@ class SlideManagerUpdate extends Component {
             if (this.position > this.slides.length - this.slidesToShow) {
                 this.position = 0;
             }
-            // this.sliderCarousel.style.transform = `translateX(-${this.position * this.widthSlide}%)`;
-            // this.scrollLeft = -this.sliderCarousel.offsetWidth * this.position * this.widthSlide / 100;
-            this.scrollLeft = (this.direction === 'X')
-                ? - this.sliderCarousel.offsetWidth * this.position * this.widthSlide / 100
-                : - this.containerCarousel.offsetHeight * this.position * this.widthSlide / 100 ;
-            this.sliderCarousel.style.transform = `translate${this.direction}(${this.scrollLeft}px)`;
+
+            this.scrollToPosition();
         }
     };
 
@@ -210,10 +206,16 @@ class SlideManagerUpdate extends Component {
     addClass() {
         this.sliderCarousel.style.transition = `all ${this.speed}s`;
         this.sliderCarousel.classList.add(`${styles.slider}`);
+
+        //необходимо для responseInit
+        this.sizeSlide = (this.axis === 'X')
+            ? this.sliderCarousel.offsetWidth / this.slidesToShow
+            : this.containerCarousel.offsetHeight / this.slidesToShow;
+
         for (let item of this.slides) {
-            (this.direction === 'X')
-                ? item.style.flex = `0 0 ${this.widthSlide}%`
-                : item.style.height = `${(this.containerCarousel.offsetHeight / this.slidesToShow)}px`;
+            (this.axis === 'X')
+                ? item.style.flex = `0 0 ${Math.floor(100 / this.slidesToShow)}%`
+                : item.style.height = `${(this.sizeSlide)}px`;
         }
 
         if (this.dots) {
@@ -235,15 +237,12 @@ class SlideManagerUpdate extends Component {
                 for (let i = 0; i < allRespone.length; i++) {
                     if (widthWindow < allRespone[i]) {
                         this.slidesToShow = this.responsive[i].slidesToShow;
-                        this.widthSlide = Math.floor(100 / this.slidesToShow);
-                        this.addClass();
                     }
                 }
             } else {
                 this.slidesToShow = slidesToShowDefault;
-                this.widthSlide = Math.floor(100 / this.slidesToShow);
-                this.addClass();
             }
+            this.addClass();
         };
 
         checkResponse();
@@ -257,7 +256,7 @@ class SlideManagerUpdate extends Component {
         this.isDown = true;
         this.sliderCarousel.classList.add(`${styles.active}`);
 
-        this.startCoordinate = (this.direction === 'X') ? e.pageX : e.pageY + this.scrollLeft;
+        this.startCoordinate = (this.axis === 'X') ? e.pageX : e.pageY + this.scrollToDirection;
     };
 
     handleMouseLeave = () => {
@@ -270,17 +269,16 @@ class SlideManagerUpdate extends Component {
 
         this.isDown = false;
         this.sliderCarousel.classList.remove(`${styles.active}`);
-        this.scrollLeft = this.scrollLeft + this.walk;
+        this.scrollToDirection = this.scrollToDirection + this.walk;
 
-        if (this.scrollLeft > 0) {
+        if (this.scrollToDirection > 0) {
             this.position = 0;
-            this.scrollLeft = 0;
-            // this.sliderCarousel.style.transform = `translateX(${this.scrollLeft}px)`;
-            this.sliderCarousel.style.transform = `translate${this.direction}(${this.scrollLeft}px)`;
+            this.scrollToDirection = 0;
+            this.sliderCarousel.style.transform = `translate${this.axis}(${this.scrollToDirection}px)`;
         }
 
         for (let i = 0; i < (this.slides.length - this.slidesToShow); i++) {
-            if (-this.sliderCarousel.offsetWidth * i * this.widthSlide / 100 > this.scrollLeft) {
+            if (- i * this.sizeSlide> this.scrollToDirection) {
                 if (this.walk < 0) {
                     this.position = i + 1;
                 }
@@ -290,12 +288,7 @@ class SlideManagerUpdate extends Component {
             }
         }
 
-        // this.scrollLeft = - this.sliderCarousel.offsetWidth * this.position * this.widthSlide / 100;
-        // this.sliderCarousel.style.transform = `translate${this.direction}(${this.scrollLeft}px)`;
-        this.scrollLeft = (this.direction === 'X')
-            ? - this.sliderCarousel.offsetWidth * this.position * this.widthSlide / 100
-            : - this.containerCarousel.offsetHeight * this.position * this.widthSlide / 100 ;
-        this.sliderCarousel.style.transform = `translate${this.direction}(${this.scrollLeft}px)`;
+        this.scrollToPosition();
 
         console.log(this.position)
 
@@ -306,33 +299,16 @@ class SlideManagerUpdate extends Component {
         if (this.dots && this.isLooped) {
             this.changeDot(this.position);
         }
-        // this.changeDot(this.position);
-
-        // for (let i = 0; i < (this.slides.length - this.slidesToShow); i++) {
-        //     if (-this.sliderCarousel.offsetWidth * i * this.widthSlide / 100 > this.scrollLeft) {
-        //         this.position = i;
-        //         this.sliderCarousel.style.transform = `translate${this.direction}(-${this.position * this.widthSlide}%)`;
-        //     }
-        // }
-
-
-        // if (this.scrollLeft < -this.sliderCarousel.offsetWidth * (this.slides.length - this.slidesToShow) * this.widthSlide / 100) {
-        //     this.position = this.slides.length - this.slidesToShow;
-        //     this.scrollLeft = -this.sliderCarousel.offsetWidth * (this.slides.length - this.slidesToShow) * this.widthSlide / 100;
-        //     this.sliderCarousel.style.transform = `translateX(${this.scrollLeft}px)`;
-        // }
     };
 
     handleMouseMove = (e) => {
         if (!this.isDown) return;
         e.preventDefault();
-        let currentCoordinate = (this.direction === 'X') ? e.pageX : e.pageY + this.scrollLeft;
+        let currentCoordinate = (this.axis === 'X') ? e.pageX : e.pageY + this.scrollToDirection;
         this.walk = currentCoordinate - this.startCoordinate;
         console.log(this.walk);
 
-        // this.sliderCarousel.style.transform = `translateX(${this.scrollLeft + this.walk}px)`;
-
-        this.sliderCarousel.style.transform = `translate${this.direction}(${this.scrollLeft + this.walk}px)`;
+        this.sliderCarousel.style.transform = `translate${this.axis}(${this.scrollToDirection + this.walk}px)`;
     };
 }
 

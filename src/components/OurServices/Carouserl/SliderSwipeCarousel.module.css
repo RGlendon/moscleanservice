@@ -6,17 +6,17 @@
 
 .container {
     width: 89%;
-    height: 600px;
+    /*height: 600px;*/
     /*width: 50%;*/
-    /*overflow: hidden;*/
+    overflow: hidden;
     margin: auto;
 
 }
 
 .movingContainer {
     display: flex;
-    flex-direction: column;
-    justify-content: space-between;
+    /*flex-direction: column;*/
+    /*justify-content: space-between;*/
     transition: all .5s;
 }
 
