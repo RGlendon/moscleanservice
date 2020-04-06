@@ -1,10 +1,11 @@
-import React, {Component} from 'react';
+import React from 'react';
 import PopupboxManager from "../../common/PopupConstructorNew/PopupboxManager";
 import "../../common/PopupConstructorNew/react-popupbox.css";
 import CoolButton from "../../common/buttons/CoolButton";
 
-import PopupOrderContent from "./PopupOrderContent";
+import PopupOrderFullContent from "./PopupOrderFullContent";
 import PopupThanks from "../PopupThanks";
+
 
 
 
@@ -18,11 +19,11 @@ const updatePopupbox = () => {
 };
 
 
-class PopupOrderButton extends React.Component {
+class PopupOrderFullButton extends React.Component {
 
-    openPopupbox(addInfo) {
+    openPopupbox() {
         const content = (
-            <PopupOrderContent update={updatePopupbox} addInfo={addInfo}/>
+            <PopupOrderFullContent update={updatePopupbox}/>
         );
 
         PopupboxManager.open({
@@ -38,10 +39,10 @@ class PopupOrderButton extends React.Component {
     render() {
         return (
             <div>
-                <CoolButton onClick={() => {this.openPopupbox(this.props.addInfo)}} size={this.props.size} text={'Заказать услугу'}/>
+                <CoolButton onClick={this.openPopupbox} size={'middle'} text={'Заказать услугу'}/>
             </div>
         )
     }
 }
 
-export default PopupOrderButton;
+export default PopupOrderFullButton;

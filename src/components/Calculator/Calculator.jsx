@@ -2,22 +2,20 @@ import React from "react";
 import styles from "./Calculator.module.css";
 
 import arrowDownSelect from "./../../assets/arrowDownSelect.svg";
-import CoolButton from "../common/buttons/CoolButton";
 import PopupOrderButton from "../Popups/PopupOrder/PopupOrderButton";
-import {toggleMenu, updateAddInfo} from "../../redux/commonReducer";
-import {connect} from "react-redux";
+// import {updateAddInfo} from "../../redux/commonReducer";
+// import {connect} from "react-redux";
 
 
 class Calculator extends React.Component {
     constructor(props) {
-        // debugger
         super(props);
         this.input = React.createRef();
         this.state = {
             isOpen: false,
             selectedElement: 1,
             //данные для axios запроса
-            typeOfWork: "maintenanceСleaning",
+            typeOfWork: "maintenance",
             meters: 40,
             price: 1600
         }
@@ -33,9 +31,6 @@ class Calculator extends React.Component {
 
     setTypeOfWork = (type) => {
         this.setState({typeOfWork: type});
-        // setTimeout(() => {
-        //     this.closeChoise();
-        // }, 100);
         this.closeChoise();
     };
 
@@ -59,7 +54,7 @@ class Calculator extends React.Component {
 
     recalculatePrice = () => {
         switch (this.state.typeOfWork) {
-            case "maintenanceСleaning":
+            case "maintenance":
                 if (0 < this.state.meters && this.state.meters <= 40) {
                    this.setState({price: 1600});
                 } else if (40 < this.state.meters && this.state.meters <= 50) {
@@ -70,7 +65,7 @@ class Calculator extends React.Component {
                     this.setState({price: this.state.meters * 34});
                 }
                 break;
-            case "spring-cleaning":
+            case "spring":
                 if (0 < this.state.meters && this.state.meters <= 40) {
                     this.setState({price: 1800});
                 } else if (40 < this.state.meters && this.state.meters <= 50) {
@@ -81,7 +76,7 @@ class Calculator extends React.Component {
                     this.setState({price: this.state.meters * 37});
                 }
                 break;
-            case "CleaningAfterRepair":
+            case "afterRepair":
                 if (0 < this.state.meters && this.state.meters <= 40) {
                     this.setState({price: 2000});
                 } else if (40 < this.state.meters && this.state.meters <= 50) {
@@ -106,6 +101,17 @@ class Calculator extends React.Component {
         }
     };
 
+    addInfo() {
+        return  {
+            typeOfWork: this.state.typeOfWork,
+            meters: this.state.meters,
+            addServices: JSON.stringify([]),
+            // price: this.state.price
+            commonPrice: this.state.price
+        };
+    }
+
+
     componentDidUpdate(prevProps, prevState) {
         if (prevState.typeOfWork !== this.state.typeOfWork || prevState.meters !== this.state.meters) {
             this.recalculatePrice();
@@ -113,16 +119,6 @@ class Calculator extends React.Component {
         if (prevState.selectedElement !== 4) {
             this.input.current.value = '';
         }
-
-        let addInfo = {
-            typeOfWork: this.state.typeOfWork,
-            meters: this.state.meters,
-            price: this.state.price
-        };
-
-        this.props.updateAddInfo(addInfo);
-        // debugger
-        // console.log(addInfo);
     }
 
     render() {
@@ -137,23 +133,23 @@ class Calculator extends React.Component {
             <div className={styles.common}>
                 <div className={styles.selectWrapper}>
                     <div className={styles.select} onClick={this.toggleChoise}>
-                        {this.state.typeOfWork === 'maintenanceСleaning' &&
+                        {this.state.typeOfWork === 'maintenance' &&
                             <p>Поддерживающая уборка</p>}
-                        {this.state.typeOfWork === 'spring-cleaning' &&
+                        {this.state.typeOfWork === 'spring' &&
                             <p>Генеральная уборка</p>}
-                        {this.state.typeOfWork === 'CleaningAfterRepair' &&
+                        {this.state.typeOfWork === 'afterRepair' &&
                             <p>Уборка после ремонта</p>}
                         {this.state.typeOfWork === 'WashingWindows' &&
                             <p>Мытье окон</p>}
                         <img src={arrowDownSelect} alt="стрелка" className={styles.arrow}/>
                     </div>
                     <div className={`${styles.selectContainer} ${this.state.isOpen ? styles.open : null}`}>
-                        {this.state.typeOfWork !== 'maintenanceСleaning' &&
-                            <p onClick={() => {this.handleTypeOfWork('maintenanceСleaning')}}>Поддерживающая уборка</p>}
-                        {this.state.typeOfWork !== 'spring-cleaning' &&
-                            <p onClick={() => {this.handleTypeOfWork('spring-cleaning')}}>Генеральная уборка</p>}
-                        {this.state.typeOfWork !== 'CleaningAfterRepair' &&
-                            <p onClick={() => {this.handleTypeOfWork('CleaningAfterRepair')}}>Уборка после ремонта</p>}
+                        {this.state.typeOfWork !== 'maintenance' &&
+                            <p onClick={() => {this.handleTypeOfWork('maintenance')}}>Поддерживающая уборка</p>}
+                        {this.state.typeOfWork !== 'cleaning' &&
+                            <p onClick={() => {this.handleTypeOfWork('spring')}}>Генеральная уборка</p>}
+                        {this.state.typeOfWork !== 'afterRepair' &&
+                            <p onClick={() => {this.handleTypeOfWork('afterRepair')}}>Уборка после ремонта</p>}
                         {this.state.typeOfWork !== 'WashingWindows' &&
                             <p onClick={() => {this.handleTypeOfWork('WashingWindows')}}>Мытье окон</p>}
                     </div>
@@ -176,22 +172,13 @@ class Calculator extends React.Component {
                     <p>{`от ${this.state.price} ₽`}</p>
                 </div>
                 <div className={styles.button}>
-                    {/*не получается прокинуть в попап пропсы, пришлось создавать глобальные данные*/}
-                    <PopupOrderButton />
+                    {/*прокинул локальный state*/}
+                    <PopupOrderButton size={'big'} addInfo={this.addInfo()}/>
                 </div>
             </div>
         );
     }
 }
 
-// function mapStateToProps(state) {
-//     return {
-//         isOpenMenu: state.common.isOpenMenu,
-//     }
-// }
 
-let mapDispatchToProps = {
-    updateAddInfo,
-};
-
-export default connect(null, mapDispatchToProps)(Calculator);
+export default Calculator;

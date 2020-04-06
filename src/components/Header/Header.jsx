@@ -49,10 +49,9 @@ const Header = (props) => {
                     <li className={styles.target}>Мытье окон / фасадов
                         <ul className={`${styles.ul} ${styles.ulInner}`}>
                             <li className={styles.direction}>Мытье окон / фасадов</li>
-                            {/*<li><NavLink to="/washing/windowplast" className={styles.link}>Пластиковые окна</NavLink></li>*/}
-                            <li><NavLink to="/washing/windowwood" className={styles.link}>Мытье окон / балконов</NavLink>
+                            <li><NavLink to="/washing/detailed" className={styles.link}>Мытье окон / балконов</NavLink>
                             </li>
-                            <li><NavLink to="/washing/balcony" className={styles.link}>Мытье фасадов</NavLink></li>
+                            <li><NavLink to="/washing/singlePrice" className={styles.link}>Мытье фасадов</NavLink></li>
                         </ul>
                     </li>
                 </ul>

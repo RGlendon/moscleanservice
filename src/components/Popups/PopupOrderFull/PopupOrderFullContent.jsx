@@ -1,6 +1,6 @@
 import React from "react";
 import CoolButton from "../../common/buttons/CoolButton";
-import styles from "./PopupOrderContent.module.css";
+import styles from "./PopupOrderFullContent.module.css";
 import {renderInput} from "../../common/ValidatorForms/ValidatorForms";
 import {minmaxLength, phoneVerification, required} from "../../common/ValidatorForms/validators";
 import {Field, reduxForm} from "redux-form";
@@ -32,7 +32,7 @@ OrderForm = reduxForm({form: 'orderForm'})(OrderForm);
 
 
 
-let PopupOrderContent = (props) => {
+let PopupOrderFullContent = (props) => {
     // const onSubmit  = (formData) => {
     //     let {name, phone} = formData;
     //     sendAPI.sendOrderForm(name, phone);
@@ -61,6 +61,12 @@ let PopupOrderContent = (props) => {
   );
 };
 
+function mapStateToProps(state) {
+    return {
+        addInfo: state.common.addInfo,
+    }
+}
 
 
-export default PopupOrderContent;
+
+export default connect(mapStateToProps, null)(PopupOrderFullContent);

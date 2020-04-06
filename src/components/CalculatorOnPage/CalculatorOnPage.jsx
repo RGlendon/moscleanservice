@@ -1,12 +1,11 @@
 import React from "react";
 import styles from "./CalculatorOnPage.module.css";
 
-
-import PopupOrderButton from "../Popups/PopupOrder/PopupOrderButton";
 import {toggleMenu, updateAddInfo} from "../../redux/commonReducer";
 import {connect} from "react-redux";
-import WhatIncluded from "../WhatIncluded/WhatIncluded";
+
 import {Route} from "react-router-dom";
+import PopupOrderFullButton from "../Popups/PopupOrderFull/PopupOrderFullButton";
 
 
 class CalculatorOnPage extends React.Component {
@@ -14,6 +13,7 @@ class CalculatorOnPage extends React.Component {
         // debugger
         super(props);
         this.input = React.createRef();
+        this.items = this.props.items;
         this.state = {
             isOpen: false,
             selectedElement: 1,
@@ -25,18 +25,6 @@ class CalculatorOnPage extends React.Component {
             commonPrice: 0,
             selected: [],
         };
-        // this.maintenanceDisplayed = [
-        //     {id: 1, name: 'Поддерживающая услуга 1', count: 1, price: 500},
-        //     {id: 2, name: 'Поддерживающая услуга 2', count: 1, price: 100},
-        //     {id: 3, name: 'Поддерживающая услуга 3', count: 1, price: 200},
-        //     {id: 4, name: 'Поддерживающая услуга 4', count: 1, price: 300},
-        // ];
-        // this.maintenanceHidden = [
-        //     {id: 5, name: 'Поддерживающая услуга 5', count: 1, price: 100},
-        //     {id: 6, name: 'Поддерживающая услуга 6', count: 1, price: 200},
-        //     {id: 7, name: 'Поддерживающая услуга 7', count: 1, price: 300},
-        //     {id: 8, name: 'Поддерживающая услуга 8', count: 1, price: 400},
-        // ];
         this.maintenance = {
             displayed: [
                 {id: 1, name: 'Поддерживающая услуга 1', count: 1, price: 500},
@@ -83,23 +71,7 @@ class CalculatorOnPage extends React.Component {
         this.setState({isOpen: !this.state.isOpen});
     };
 
-    closeChoise = () => {
-        this.setState({isOpen: false});
-    };
 
-    setTypeOfWork = (type) => {
-        this.setState({typeOfWork: type});
-        // setTimeout(() => {
-        //     this.closeChoise();
-        // }, 100);
-        this.closeChoise();
-    };
-
-    handleTypeOfWork = (type) => {
-        this.setTypeOfWork(type);
-        this.setMeters(40);
-        this.selectElement(1);
-    };
 
     setMeters = (meters) => {
         if (typeof meters === 'number') {
@@ -148,7 +120,7 @@ class CalculatorOnPage extends React.Component {
                     this.setState({metersPrice: this.state.meters * 40});
                 }
                 break;
-            case "WashingWindows":
+            case "detailed":
                 if (0 < this.state.meters && this.state.meters <= 40) {
                     this.setState({metersPrice: 1000});
                 } else if (40 < this.state.meters && this.state.meters <= 50) {
@@ -167,7 +139,6 @@ class CalculatorOnPage extends React.Component {
         // let commonPrice = metersPrice + addPrice;
         // this.setState({commonPrice: commonPrice});
         this.setState({commonPrice: this.state.metersPrice + this.state.addPrice});
-        // this.commonPrice = this.state.metersPrice + this.state.addPrice;
         // debugger
     }
 
@@ -232,7 +203,9 @@ class CalculatorOnPage extends React.Component {
         let addInfo = {
             typeOfWork: this.state.typeOfWork,
             meters: this.state.meters,
-            price: this.state.price
+            // addServices: this.state.selected,
+            addServices: JSON.stringify(this.state.selected),
+            commonPrice: this.state.commonPrice,
         };
 
         this.props.updateAddInfo(addInfo);
@@ -336,12 +309,11 @@ class CalculatorOnPage extends React.Component {
 
                 <div className={styles.priceContainer}>
                     {/*<p className={styles.price}>{`Цена: ${this.state.metersPrice} ₽`}</p>*/}
-                    <p className={styles.price}>{`Цена: ${this.state.metersPrice} ₽`}</p>
                     <p className={styles.price}>{`Цена: ${this.state.commonPrice} ₽`}</p>
 
                     <div className={styles.button}>
-                        {/*не получается прокинуть в попап пропсы, пришлось создавать глобальные данные*/}
-                        <PopupOrderButton/>
+                        {/*в данном случае использую глобальный store для практики*/}
+                        <PopupOrderFullButton/>
                     </div>
                 </div>
             </div>

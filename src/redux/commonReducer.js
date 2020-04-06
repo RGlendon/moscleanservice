@@ -3,11 +3,7 @@ const UPDATE_ADDINFO = 'UPDATE_ADDINFO';
 
 const initialState = {
     isOpenMenu: false,
-    addInfo: {
-            typeOfWork: 'maintenanceСleaning',
-            meters: 40,
-            price: 1600
-        }
+    addInfo: {}
 };
 
 function commonReducer(state = initialState, action) {

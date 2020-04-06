@@ -53,8 +53,8 @@ function App(props) {
                 <Route path='/cleaning/:path' render={() => <Cleaning/>}/>
                 <Route exact path='/cleaning' render={() => <Redirect to={'/cleaning/maintenance'}/>}/>
 
-                {/*<Route path='/washing' render={() => <Washing/>}/>*/}
-                {/*<Route exact path='/washing' render={() => <Redirect to={'/washing/windowplast'}/>}/>*/}
+                <Route path='/washing/:path' render={() => <Washing/>}/>
+                <Route exact path='/washing' render={() => <Redirect to={'/washing/detailed'}/>}/>
             </main>
 
 
