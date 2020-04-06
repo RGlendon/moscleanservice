@@ -1,6 +1,6 @@
 import React from "react";
 import styles from "./Footer.module.css";
-import logo from "./../../assets/LogoClear.svg";
+import logo from "./../../assets/LogoClear2.svg";
 import subscribe from "./../../assets/Mosclean.svg";
 import {Link, NavLink} from "react-router-dom";
 import vk from "./../../assets/contacts/VK.svg";
@@ -49,10 +49,11 @@ const Footer = () => {
                             соглашение</NavLink>
                     </li>
                 </ul>
+
                 <div className={styles.logoContainer}>
                     <img className={styles.logo} src={logo} alt="логотип"/>
-                    <img className={styles.subscribe} src={subscribe} alt="описание"/>
                 </div>
+
                 <div className={styles.contacts}>
                     <div>
                         <p>Мы в соцсетях:</p>

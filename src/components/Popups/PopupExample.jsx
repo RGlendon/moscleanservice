@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import PopupboxManager from "../common/PopupConstructor/PopupboxManager";
 import {PopupboxContainer} from "../common/PopupConstructor/PopupboxContainer"
-import "./../common/PopupConstructor/react-popupbox.css";
+// import "./../common/PopupConstructor/react-popupbox.css";
 
 const updatePopupbox = () => {
     const content = (

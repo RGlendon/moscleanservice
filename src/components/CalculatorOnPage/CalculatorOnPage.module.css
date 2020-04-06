@@ -1,0 +1,241 @@
+.common {
+    font-family: HelveticaNeueCyr, sans-serif;
+    font-style: normal;
+
+    color: var(--color-gray2);
+
+    user-select: none;
+}
+
+.firstPart {
+    border-bottom: 2px solid #C4C4C4;
+    /*min-height: 325px;*/
+    min-height: calc(325px - 45px);
+}
+
+
+.description {
+    font-weight: 550;
+    font-size: 17px;
+    line-height: 25px;
+    margin-bottom: 10px;
+}
+
+
+
+.services {
+    display: grid;
+    grid-template-columns: repeat(2, 245px);
+    grid-column-gap: 70px;
+    grid-row-gap: 20px;
+    padding-top: 20px;
+}
+
+.accordion {
+    background-color: transparent;
+    color: var(--color-gray2);
+    cursor: pointer;
+
+    padding: 0 0 25px;
+    width: 100%;
+    text-align: left;
+    font-weight: normal;
+    font-size: 17px;
+    line-height: 35px;
+    border: none;
+
+    outline: none;
+    transition: 0.4s;
+}
+
+.accordion:before {
+    content: '\002B'; /* Unicode character for "plus" sign (+) '\02795' */
+    font-size: 35px;
+    color: var(--color-green);
+    float: left;
+    margin-right: 12px;
+}
+
+.active:before {
+    content: '\2212'; /* Unicode character for "minus" sign (-) "\2796" */
+}
+
+.active {
+    margin-top: 20px;
+}
+
+.panel {
+    background-color: transparent;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.2s ease-out;
+}
+
+.item {
+    display: flex;
+}
+
+.checkbox {
+    width: 18px;
+    height: 18px;
+    border: 1px solid var(--color-gray3);
+    box-sizing: border-box;
+    border-radius: 3.5px;
+
+    margin-right: 10px;
+    cursor: pointer;
+
+    position: relative;
+}
+
+.activeCheckbox:after {
+    content: url("./../../assets/iconsTwo/check.svg");
+    position: absolute;
+    top: -7px;
+    z-index: 1;
+}
+
+
+
+
+
+
+.selectWrapper {
+    position: relative;
+}
+
+.select {
+    width: 100%;
+    padding-left: 15px;
+    /*padding: 13px 0 13px 15px;*/
+
+    border: 1px solid var(--color-gray3);
+    box-sizing: border-box;
+    border-radius: 5px;
+    cursor: pointer;
+    position: relative;
+
+    z-index: 2;
+    background-color: var(--color-white);
+}
+
+.arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    right: 10px;
+}
+
+.selectContainer {
+    width: 100%;
+    padding-left: 15px;
+
+    border: 1px solid var(--color-gray3);
+    border-radius: 5px;
+    box-sizing: border-box;
+    z-index: 1;
+
+
+    position: absolute;
+    top: -9999px;
+    opacity: 0;
+    background-color: var(--color-white);
+
+    transition: opacity .3s;
+}
+
+.selectContainer p {
+    cursor: pointer;
+}
+.selectContainer p:hover {
+    text-decoration: underline;
+}
+
+.open {
+    top: 45px;
+    opacity: 1;
+}
+
+
+.meters {
+    margin-top: 30px;
+    margin-bottom: 30px;
+
+    display: flex;
+    justify-content: flex-start;
+}
+
+.option {
+    /*padding: 0 12px;*/
+    border: 1px solid var(--color-gray3);
+    border-radius: 5px;
+    transition: all .2s;
+    cursor: pointer;
+    background-color: var(--color-white);
+
+    min-width: 80px;
+    margin-right: 25px;
+
+    text-align: center;
+
+    font-weight: normal;
+    font-size: 17px;
+    /*line-height: 16px;*/
+    line-height: 50px;
+}
+.option:hover {
+    border: 1px solid var(--color-green);
+}
+
+.optionInput {
+    position: relative;
+}
+
+.selectedOption {
+    background-color: var(--color-green);
+    color: var(--color-white);
+}
+
+.input {
+    width: 57px;
+    outline: none;
+    border: 0;
+    border-bottom: 1px solid var(--color-gray3);
+    background-color: transparent;
+}
+
+.selectedOption .input {
+    color: var(--color-white);
+    border-color: var(--color-white);
+}
+
+.dimension {
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding-right: 12px;
+    padding-left: 5px;
+    /*background-color: var(--color-white);*/
+    background-color: inherit;
+    border-radius: 5px;
+}
+
+
+
+.priceContainer {
+    display: flex;
+    margin-top: 35px;
+    align-items: center;
+
+    font-weight: normal;
+    font-size: 25px;
+    line-height: 35px;
+}
+
+.price {
+    /*display: block;*/
+    margin-right: 60px;
+}
+
+.button {
+}

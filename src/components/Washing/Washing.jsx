@@ -6,7 +6,7 @@ import SectionOne from "../SectionOne/SectionOne";
 import firstBg from "../../assets/images/sectionOneBgWashing.jpg";
 import SectionTwoAddWindowPlast from "../OurServices/pages/SectionTwoAddWindowPlast";
 import SectionTwoAddWindowWood from "../OurServices/pages/SectionTwoAddWindowWood";
-import SectionTwoAddBalcony from "../OurServices/pages/SectionTwoAddBalcony";
+// import SectionTwoAddBalcony from "../OurServices/pages/SectionTwoAddBalcony";
 
 const Washing = (props) => {
     // debugger
@@ -20,7 +20,7 @@ const Washing = (props) => {
             </div>
             <Route exact path='/washing/windowplast' render={() => <SectionTwoAddWindowPlast/>}/>
             <Route exact path='/washing/windowwood' render={() => <SectionTwoAddWindowWood/>}/>
-            <Route exact path='/washing/balcony' render={() => <SectionTwoAddBalcony/>}/>
+            {/*<Route exact path='/washing/balcony' render={() => <SectionTwoAddBalcony/>}/>*/}
 
             <OtherComponents/>
         </div>

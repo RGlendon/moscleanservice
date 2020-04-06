@@ -1,5 +1,5 @@
 import React from "react";
-import GreenButton from "../../common/buttons/GreenButton";
+import CoolButton from "../../common/buttons/CoolButton";
 import styles from "./PopupAskContent.module.css";
 import {renderInput, renderTextarea} from "../../common/ValidatorForms/ValidatorForms";
 import {
@@ -33,7 +33,7 @@ let AskForm = (props) => {
                 <Field component={renderTextarea} type="textarea" name="question" placeholder={'Ваш вопрос'} validate={[required, maxLength700]}/>
             </div>
             <div  className={styles.button}>
-                <GreenButton onClick={props.close} isDisabled={props.invalid} size={'middle'} text={'Задать вопрос'}/>
+                <CoolButton onClick={props.close} isDisabled={props.invalid} size={'middle'} text={'Задать вопрос'}/>
             </div>
         </form>
     );

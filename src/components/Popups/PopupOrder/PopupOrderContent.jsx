@@ -1,5 +1,5 @@
 import React from "react";
-import GreenButton from "../../common/buttons/GreenButton";
+import CoolButton from "../../common/buttons/CoolButton";
 import styles from "./PopupOrderContent.module.css";
 import {renderInput} from "../../common/ValidatorForms/ValidatorForms";
 import {minmaxLength, phoneVerification, required} from "../../common/ValidatorForms/validators";
@@ -21,7 +21,7 @@ let OrderForm = (props) => {
                 <Field component={renderInput} type="tel" name="phone" placeholder={'Ваш номер телефона*'} validate={[required, phoneVerification]}/>
             </div>
             <div  className={styles.button}>
-                <GreenButton isDisabled={props.invalid} size={'middle'} text={'Оставить заявку'}/>
+                <CoolButton isDisabled={props.invalid} size={'middle'} text={'Оставить заявку'}/>
             </div>
         </form>
     );

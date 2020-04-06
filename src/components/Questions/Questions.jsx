@@ -1,6 +1,6 @@
 import React from "react";
 import styles from "./Questions.module.css";
-import GreenButton from "../common/buttons/GreenButton";
+import CoolButton from "../common/buttons/CoolButton";
 import PopupAskButton from "../Popups/PopupAsk/PopupAskButton";
 
 

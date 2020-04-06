@@ -45,11 +45,11 @@
 }
 
 .tagline {
-    /*font-family: Open Sans;*/
+    font-family: 'Open Sans';
     font-style: normal;
     font-weight: bold;
     font-size: 65px;
-    line-height: 80px;
+    line-height: 75px;
 
     margin-top: 20px;
 }

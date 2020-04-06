@@ -1,23 +1,44 @@
 .wrapper {
     height: 600px;
     width: 100%;
-    /*background-image: url("../../assets/images/sectionOneBg.jpg") ;*/
-    background-size: cover;
-    background-position: center;
 
     position: relative;
-
 }
 
-.wrapper:after {
+.bg {
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    filter: blur(2px);
+}
+
+/*.bg:after {*/
+/*    content: '';*/
+/*    position: absolute;*/
+/*    top: 0;*/
+/*    left: 0;*/
+/*    right: 0;*/
+/*    bottom: 0;*/
+/*    background: rgba(0,0,0,0);*/
+/*    z-index: 1;*/
+/*}*/
+
+.rgba02:after {
     content: '';
     position: absolute;
     top: 0;
     left: 0;
     right: 0;
     bottom: 0;
-    background: rgba(0,0,0,.4);
-    z-index: 2;
+    background: rgba(0,0,0,.2);
+    z-index: 1;
+}
+
+.bg2 {
+    position: absolute;
+    right: 0;
+    bottom: 0;
 }
 
 .inner {
@@ -29,7 +50,7 @@
 }
 
 .copy {
-    font-family: Arial;
+    font-family: Arial, sans-serif;
     font-style: normal;
     font-weight: 900;
     font-size: 20px;
@@ -43,10 +64,10 @@
     font-style: normal;
     font-weight: bold;
     font-size: 65px;
-    line-height: 80px;
+    line-height: 75px;
 
     margin-top: 20px;
-    margin-bottom: 60px;
+    margin-bottom: 50px;
 }
 
 .pipka {

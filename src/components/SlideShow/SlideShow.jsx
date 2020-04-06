@@ -67,7 +67,7 @@ class SlideShow extends Component {
                     <Calculator/>
                 </div>
                 <div className={styles.scroll}>
-                    <Scroll service={this.props.service}/>
+                    <Scroll needToScroll={this.props.service}/>
                 </div>
             </div>
         );

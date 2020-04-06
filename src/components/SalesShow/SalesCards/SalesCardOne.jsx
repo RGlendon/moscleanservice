@@ -1,6 +1,6 @@
 import React from "react";
 import styles from "./SalesCardOne.module.css";
-import GreenButton from "../../common/buttons/GreenButton";
+import CoolButton from "../../common/buttons/CoolButton";
 
 
 
@@ -11,7 +11,7 @@ const SalesCardOne = (props) => {
             <p className={styles.count}>20%</p>
             <h2 className={styles.alarm}>Получи скидку* при первом заказе на любую уборку!</h2>
             <div className={styles.button}>
-                <GreenButton text={'Заказать услугу'} size={'middle'}/>
+                <CoolButton text={'Заказать услугу'} size={'middle'}/>
             </div>
         </div>
 

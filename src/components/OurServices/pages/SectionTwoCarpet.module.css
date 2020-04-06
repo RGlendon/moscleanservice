@@ -1,0 +1,29 @@
+.common {
+    font-family: HelveticaNeueCyr, sans-serif;
+    font-style: normal;
+    color: var(--color-gray2);
+
+    width: 84.2%;
+    margin: auto;
+
+    position: relative;
+}
+
+.gridContainer {
+    display: grid;
+    grid-template-columns: repeat(5, minmax(max-content, max-content));
+    grid-gap: 50px 40px;
+
+    width: 100%;
+
+    /*margin: auto;*/
+    padding-bottom: 50px;
+    transform: translateY(-30px);
+    border-bottom: 2px solid #C4C4C4;
+}
+
+.img {
+    position: absolute;
+    top: -8%;
+    right: 0;
+}

@@ -25,6 +25,8 @@ export class PopupboxContainer extends Component {
       fadeOutSpeed: 500,
       overlayClose: true,
       escClose: true,
+      closeBtn: true,
+      padding: true,
       content: {}
     }
 
@@ -100,9 +102,12 @@ export class PopupboxContainer extends Component {
       show,
       children,
       style,
-      className,
+
+      closeBtn,
+      padding,
       content
     } = this.state
+
 
     return (
       <div
@@ -110,13 +115,14 @@ export class PopupboxContainer extends Component {
         className={`popupbox${show ? ' is-active': ''}`}
       >
         <div
-          className={`popupbox-wrapper${className ? ` ${className}` : ''}`}
+          className={`popupbox-wrapper`}
           style={style ? style : undefined}
         >
+          {closeBtn &&
           <img className={`popupbox-btn--close`}
-               src={closePopup} alt="закрыть" onClick={this.closeImagebox}/>
+               src={closePopup} alt="закрыть" onClick={this.closeImagebox}/>}
           <div
-            className={`popupbox-content${content.className ? ` ${content.className}` : ''}`}
+            className={`popupbox-content  ${!padding ? 'popupbox-content_withoutPadding' : ''}`}
             style={content.style ? content.style : undefined}
           >
             { children }

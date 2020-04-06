@@ -2,7 +2,7 @@ import React from "react";
 import styles from "./Calculator.module.css";
 
 import arrowDownSelect from "./../../assets/arrowDownSelect.svg";
-import GreenButton from "../common/buttons/GreenButton";
+import CoolButton from "../common/buttons/CoolButton";
 import PopupOrderButton from "../Popups/PopupOrder/PopupOrderButton";
 import {toggleMenu, updateAddInfo} from "../../redux/commonReducer";
 import {connect} from "react-redux";

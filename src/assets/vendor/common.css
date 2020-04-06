@@ -1,4 +1,5 @@
 @import "./Fonts/HelveticaNeueCyr.css";
+@import "./Fonts/OpenSans.css";
 
 :root {
     --color-green-tr: rgba(67, 201, 81, 0.95);

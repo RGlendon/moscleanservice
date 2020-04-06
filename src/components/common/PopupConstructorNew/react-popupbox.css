@@ -67,7 +67,7 @@
 .popupbox-wrapper {
   border-radius: 5px;
   overflow: hidden;
-  max-width: 80%;
+  /*max-width: 80%;*/
   min-width: 300px;
   box-shadow: 0 0 20px rgba(0, 0, 0, .9);
   background-color: white;
@@ -75,6 +75,10 @@
 
 .popupbox-content {
   padding: 50px 80px;
+}
+
+.popupbox-content_withoutPadding {
+  padding: 0;
 }
 
 .popupbox-btn--close {

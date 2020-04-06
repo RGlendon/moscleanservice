@@ -1,0 +1,56 @@
+.common {
+    font-family: HelveticaNeueCyr, sans-serif;
+    font-style: normal;
+    color: var(--color-gray2);
+    width: 85%;
+
+    margin: auto;
+}
+
+.title {
+    font-weight: bold;
+    font-size: 35px;
+    line-height: 39px;
+}
+
+.gridContainer {
+    margin: 70px auto 0;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 50px 45px;
+}
+
+
+.item {
+    display: flex;
+    align-items: flex-start;
+}
+
+.img {
+    margin-right: 45px;
+}
+
+
+.itemTitle {
+    font-weight: normal;
+    font-size: 25px;
+    line-height: 35px;
+    color: black;
+}
+
+.subtitle {
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 20px;
+
+    margin-top: 5px;
+}
+
+.short {
+    width: 400px;
+}
+
+.button {
+    margin: 50px auto 0;
+    width: fit-content;
+}

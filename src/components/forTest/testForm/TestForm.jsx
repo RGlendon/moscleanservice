@@ -1,5 +1,5 @@
 import React from "react";
-import GreenButton from "../../common/buttons/GreenButton";
+import CoolButton from "../../common/buttons/CoolButton";
 import styles from "./../../Popups/PopupOrder/PopupOrderContent.module.css";
 
 import {Field, reduxForm} from "redux-form";

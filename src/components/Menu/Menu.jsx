@@ -36,10 +36,10 @@ const Menu = (props) => {
                 }} onKeyDown={() => {
                     console.log('dfdfsdf')
                 }}/>
-                <menu className={styles.sidenav}>
-                    <NavLink to="#" className={styles.link}>Химчистка мебели</NavLink>
-                    <NavLink to="#" className={styles.link}>Химчистка матрасов</NavLink>
-                    <NavLink to="#" className={styles.link}>Химчистка ковров</NavLink>
+                <menu className={styles.sidenav} onClick={() => {props.toggleMenu(false)}}>
+                    <NavLink to="/drycleaning/furniture" className={styles.link}>Химчистка мебели</NavLink>
+                    <NavLink to="/drycleaning/matress" className={styles.link}>Химчистка матрасов</NavLink>
+                    <NavLink to="/drycleaning/carpet" className={styles.link}>Химчистка ковров</NavLink>
                     <NavLink to="#" className={styles.link}>Поддерживающая уборка</NavLink>
                     <NavLink to="#" className={styles.link}>Генеральная уборка</NavLink>
                     <NavLink to="#" className={styles.link}>Уборка после ремонта</NavLink>

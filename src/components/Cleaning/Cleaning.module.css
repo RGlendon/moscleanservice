@@ -1,28 +1,38 @@
-.size {
+.calculator {
+    transform: translateY(-80px);
 
+    padding-top: 80px;
 }
 
-.section1 {
-    height: 400px;
-    background-color: blueviolet;
+.title {
+    font-family: HelveticaNeueCyr, sans-serif;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 35px;
+    line-height: 39px;
+
+    color: var(--color-gray2);
+
+    padding-top: 50px;
+    width: 85%;
+    margin: auto;
 }
 
-.sectionAppart {
-    height: 300px;
-    background-color: #ebfd80;
+.inner {
+    position: relative;
+
+    width: 85%;
+    margin: 45px auto 0;
 }
 
-.sectionHome {
-    height: 300px;
-    background-color: gold;
+.imageContainer {
+    position: absolute;
+    top: 0;
+    right: 0;
 }
 
-.sectionOffice {
-    height: 300px;
-    background-color: gray;
+.whatIncluded {
+    margin-top: 10px;
 }
 
-.another {
-    height: 700px;
-    background-color: salmon;
-}
+

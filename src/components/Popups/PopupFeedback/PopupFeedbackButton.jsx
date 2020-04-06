@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 import PopupboxManager from "../../common/PopupConstructorNew/PopupboxManager";
 
 import "../../common/PopupConstructorNew/react-popupbox.css";
-import GreenButton from "../../common/buttons/GreenButton";
+import CoolButton from "../../common/buttons/CoolButton";
 
 import PopupFeedbackContent from "./PopupFeedbackContent";
 import PopupThanks from "../PopupThanks";
@@ -38,7 +38,7 @@ class PopupFeedbackButton extends Component {
     render() {
         return (
             <div>
-                <GreenButton onClick={this.openPopupbox} size={'middle'} text={'Оставить отзыв'}/>
+                <CoolButton onClick={this.openPopupbox} size={'middle'} text={'Оставить отзыв'}/>
             </div>
         )
     }

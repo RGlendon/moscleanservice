@@ -1,6 +1,6 @@
 import React from "react";
 import styles from "./Card.module.css";
-import GreenButton from "../../common/buttons/GreenButton";
+import CoolButton from "../../common/buttons/CoolButton";
 
 
 const Card = ({icon, title, price}) => {
@@ -13,7 +13,7 @@ const Card = ({icon, title, price}) => {
             </div>
             <div className={styles.containerTwo}>
                 <p className={styles.price}>{price}</p>
-                <GreenButton size={'small'} text={'Заказать'}/>
+                <CoolButton size={'small'} text={'Заказать'}/>
             </div>
         </div>
     );

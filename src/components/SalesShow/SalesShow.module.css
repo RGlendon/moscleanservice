@@ -44,7 +44,7 @@
     left: 112px;
     display: flex;
     flex-direction: column;
-    z-index: 20;
+    /*z-index: 20;*/
 }
 
 .dot {

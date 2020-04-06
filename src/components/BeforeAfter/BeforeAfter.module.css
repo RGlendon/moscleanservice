@@ -1,0 +1,43 @@
+.common {
+    font-family: HelveticaNeueCyr, sans-serif;
+    font-style: normal;
+    color: var(--color-gray2);
+    width: 85%;
+
+    margin: auto;
+
+    padding-top: 90px;
+}
+
+.title {
+    font-weight: bold;
+    font-size: 35px;
+    line-height: 39px;
+}
+
+.imageContainer {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-column-gap: 45px;
+
+    margin-top: 70px;
+}
+
+
+.img {
+    border-radius: 5px;
+    width: 100%;
+    padding-bottom: 58%;
+
+    background-size: cover;
+    background-position: center;
+
+    cursor: pointer;
+}
+
+.popupImg {
+    width: 80vw;
+    padding-bottom: 46.4%;
+    background-size: cover;
+    background-position: center;
+}

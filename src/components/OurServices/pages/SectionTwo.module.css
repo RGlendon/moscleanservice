@@ -1,0 +1,26 @@
+.common {
+    font-family: HelveticaNeueCyr, sans-serif;
+    font-style: normal;
+    color: var(--color-gray2);
+
+    /*padding-top: 50px;*/
+
+    /*padding-top: calc(50px + 80px);*/
+    /*position: relative;*/
+    /*top: -80px;*/
+}
+
+.gridContainer {
+    display: grid;
+    grid-template-columns: repeat(5, minmax(max-content, max-content));
+    grid-gap: 50px 40px;
+
+    /*width: fit-content;*/
+    width: 84.2%;
+
+    margin: auto;
+    padding-bottom: 50px;
+    transform: translateY(-30px);
+    border-bottom: 2px solid #C4C4C4;
+}
+

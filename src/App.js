@@ -10,15 +10,11 @@ import {Redirect, Route} from "react-router-dom";
 import DryCleaning from "./components/DryCleaning/DryCleaning";
 import Cleaning from "./components/Cleaning/Cleaning";
 import Washing from "./components/Washing/Washing";
-import GreenButton from "./components/common/buttons/GreenButton";
-import LightButton from "./components/common/buttons/LightButton";
-import GreenButtonSmall from "./components/common/buttons/GreenButtonSmall";
+
+
 import PopupExample from "./components/Popups/PopupExample";
 import PopupOrderButton from "./components/Popups/PopupOrder/PopupOrderButton";
 
-
-import window1 from "./assets/iconsTwo/window1.svg";
-import window2 from "./assets/iconsTwo/window2.svg";
 
 
 import ContainerParent from "./components/forTest/ContainerParent";
@@ -28,7 +24,7 @@ import NewTestForm from "./components/forTest/testForm/NewTestForm";
 import {PopupboxContainer} from "./components/common/PopupConstructorNew/PopupboxContainer";
 import PopupAskButton from "./components/Popups/PopupAsk/PopupAskButton";
 import SectionOneCard from "./components/SlideShow/SlideShowCardOne/SectionOneCard";
-import firstBg from "./assets/images/sectionOneBgDryCleaning.jpg";
+
 import SectionOne from "./components/SectionOne/SectionOne";
 
 import SectionFiveAdd from "./components/SectionFiveAdd/SectionFiveAdd";
@@ -52,10 +48,10 @@ function App(props) {
 
                 {/*<PopupAskContent/>*/}
                 <Route path='/drycleaning/:path' render={() => <DryCleaning/>}/>
-                <Route exact path='/drycleaning' render={() => <Redirect to={'/drycleaning/appart'}/>}/>
+                <Route exact path='/drycleaning' render={() => <Redirect to={'/drycleaning/furniture'}/>}/>
 
-                <Route path='/cleaning' render={() => <Cleaning/>}/>
-                <Route exact path='/cleaning' render={() => <Redirect to={'/cleaning/furniture'}/>}/>
+                <Route path='/cleaning/:path' render={() => <Cleaning/>}/>
+                <Route exact path='/cleaning' render={() => <Redirect to={'/cleaning/maintenance'}/>}/>
 
                 {/*<Route path='/washing' render={() => <Washing/>}/>*/}
                 {/*<Route exact path='/washing' render={() => <Redirect to={'/washing/windowplast'}/>}/>*/}
@@ -82,7 +78,7 @@ function App(props) {
 
 
             {/*PopupboxContainer обязательный компонент. Один на все popup'ы*/}
-            {/*<PopupboxContainer/>*/}
+            <PopupboxContainer/>
         </div>
     );
 }
