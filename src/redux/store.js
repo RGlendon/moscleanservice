@@ -1,4 +1,4 @@
-import {applyMiddleware, combineReducers, createStore} from "redux";
+import {combineReducers, createStore} from "redux";
 import commonReducer from "./commonReducer";
 import { reducer as formReducer } from 'redux-form'
 

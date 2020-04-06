@@ -1,4 +1,4 @@
-import React, {Component} from 'react';
+import React from 'react';
 import PopupboxManager from "../../common/PopupConstructorNew/PopupboxManager";
 import "../../common/PopupConstructorNew/react-popupbox.css";
 import CoolButton from "../../common/buttons/CoolButton";

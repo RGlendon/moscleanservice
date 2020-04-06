@@ -42,11 +42,13 @@ export class PopupboxContainer extends Component {
     }
   }
 
-  componentWillMount() {
-    Manager.addChangeListener(this.handleStoreChange)
-  }
+  // componentWillMount() {
+  //   Manager.addChangeListener(this.handleStoreChange)
+  // }
 
   componentDidMount() {
+    Manager.addChangeListener(this.handleStoreChange);
+
     document.addEventListener('keydown', this.onKeyDown.bind(this))
   }
 

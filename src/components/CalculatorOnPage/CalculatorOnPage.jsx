@@ -1,7 +1,7 @@
 import React from "react";
 import styles from "./CalculatorOnPage.module.css";
 
-import {toggleMenu, updateAddInfo} from "../../redux/commonReducer";
+import {updateAddInfo} from "../../redux/commonReducer";
 import {connect} from "react-redux";
 
 import {Route} from "react-router-dom";
@@ -130,6 +130,8 @@ class CalculatorOnPage extends React.Component {
                 } else if (60 < this.state.meters) {
                     this.setState({metersPrice: this.state.meters * 29});
                 }
+                break;
+            default:
                 break;
         }
     };

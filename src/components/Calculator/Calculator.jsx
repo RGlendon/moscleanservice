@@ -98,6 +98,8 @@ class Calculator extends React.Component {
                     this.setState({price: this.state.meters * 29});
                 }
                 break;
+            default:
+                break;
         }
     };
 

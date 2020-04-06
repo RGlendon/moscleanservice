@@ -10,7 +10,7 @@ const CommentCard = (props) => {
         <div className={styles.common}>
             <div className={styles.bg} style={{backgroundImage: `url(${url})`}}></div>
             <div className={styles.ava} style={{backgroundImage: `url(${ava})`}}></div>
-            <h3 className={styles.name}>{props.name}</h3>
+            <h3 className={styles.name}>{name}</h3>
         </div>
     );
 };

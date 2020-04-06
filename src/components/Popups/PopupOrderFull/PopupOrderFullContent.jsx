@@ -5,7 +5,7 @@ import {renderInput} from "../../common/ValidatorForms/ValidatorForms";
 import {minmaxLength, phoneVerification, required} from "../../common/ValidatorForms/validators";
 import {Field, reduxForm} from "redux-form";
 import {sendAPI} from "../../api/api";
-import axios from "axios";
+// import axios from "axios";
 import {connect} from "react-redux";
 
 
@@ -33,16 +33,10 @@ OrderForm = reduxForm({form: 'orderForm'})(OrderForm);
 
 
 let PopupOrderFullContent = (props) => {
-    // const onSubmit  = (formData) => {
-    //     let {name, phone} = formData;
-    //     sendAPI.sendOrderForm(name, phone);
-    // }
-    // console.log(props.addInfo);
-// debugger
-    async function onSubmit(formData) {
-        const {name, phone} = formData;
-
-        const form = await axios.post('/sendOrderFormFull', {
+    
+    const onSubmit  = (formData) => {
+        let {name, phone} = formData;
+        sendAPI.sendOrderFormFull({
             name,
             phone,
             typeOfWork: props.addInfo.typeOfWork,
@@ -50,7 +44,21 @@ let PopupOrderFullContent = (props) => {
             addServices: props.addInfo.addServices,
             commonPrice: props.addInfo.commonPrice
         });
-    }
+    };
+    // console.log(props.addInfo);
+
+//     async function onSubmit(formData) {
+//         const {name, phone} = formData;
+//
+//         const form = await axios.post('/sendOrderFormFull', {
+//             name,
+//             phone,
+//             typeOfWork: props.addInfo.typeOfWork,
+//             meters: props.addInfo.meters,
+//             addServices: props.addInfo.addServices,
+//             commonPrice: props.addInfo.commonPrice
+//         });
+//     }
 
   return (
       <div className={styles.common}>

@@ -1,29 +1,29 @@
 import React from "react";
 import styles from "./Cleaning.module.css"
-import {NavLink, Route, withRouter} from "react-router-dom";
+import {Route, withRouter} from "react-router-dom";
 
-import SectionOne from "../SectionOne/SectionOne";
-import firstBg from "../../assets/images/Image1.jpg";
-import s1bg2 from "../../assets/images/s1bg2Cleaning.svg";
+import SectionOne from "../../SectionOne/SectionOne";
+import firstBg from "../../../assets/images/Image1.jpg";
+import s1bg2 from "../../../assets/images/s1bg2Cleaning.svg";
 
-import SectionFourAdd from "../SectionFourAdd/SectionFourAdd";
+import SectionFourAdd from "../../SectionFourAdd/SectionFourAdd";
 
-import MenuInSection from "../MenuInSection/MenuInSection";
+import MenuInSection from "../../MenuInSection/MenuInSection";
 
-import WhatIncluded from "../WhatIncluded/WhatIncluded";
-import bucket from "./../../assets/iconsThree/forIncluded/Bucket.svg";
-import hand from "./../../assets/iconsThree/forIncluded/Hand.svg";
-import cleaner from "./../../assets/iconsThree/forIncluded/Cleaner.svg";
-import garbage from "./../../assets/iconsThree/forIncluded/garbage.svg";
-import vacuum from "./../../assets/iconsThree/forIncluded/vacuum.svg";
-import dishes from "./../../assets/iconsThree/forIncluded/dishes.svg";
+import WhatIncluded from "../../WhatIncluded/WhatIncluded";
+import bucket from "../../../assets/iconsThree/forIncluded/Bucket.svg";
+import hand from "../../../assets/iconsThree/forIncluded/Hand.svg";
+import cleaner from "../../../assets/iconsThree/forIncluded/Cleaner.svg";
+import garbage from "../../../assets/iconsThree/forIncluded/garbage.svg";
+import vacuum from "../../../assets/iconsThree/forIncluded/vacuum.svg";
+import dishes from "../../../assets/iconsThree/forIncluded/dishes.svg";
 
-import m1 from "./../../assets/images/beforeAfter/m1.jpg"
-import m2 from "./../../assets/images/beforeAfter/m2.jpg"
+import m1 from "../../../assets/images/beforeAfter/m1.jpg"
+import m2 from "../../../assets/images/beforeAfter/m2.jpg"
 
-import SalesShow from "../SalesShow/SalesShow";
-import CalculatorOnPage from "../CalculatorOnPage/CalculatorOnPage";
-import BeforeAfterSmall from "../BeforeAfter/BeforeAfterSmall/BeforeAfterSmall";
+import SalesShow from "../../SalesShow/SalesShow";
+import CalculatorOnPage from "../../CalculatorOnPage/CalculatorOnPage";
+import BeforeAfterSmall from "../../BeforeAfter/BeforeAfterSmall/BeforeAfterSmall";
 
 
 

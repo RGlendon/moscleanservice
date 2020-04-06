@@ -1,31 +1,31 @@
 import React from "react";
 import styles from "./Washing.module.css"
-import {NavLink, Route, withRouter} from "react-router-dom";
+import {withRouter} from "react-router-dom";
 
-import SectionOne from "../SectionOne/SectionOne";
-import firstBg from "../../assets/images/image3.jpg";
-import s1bg2 from "../../assets/images/s1bg2washing.svg";
+import SectionOne from "../../SectionOne/SectionOne";
+import firstBg from "../../../assets/images/image3.jpg";
+import s1bg2 from "../../../assets/images/s1bg2washing.svg";
 
-import SectionFourAdd from "../SectionFourAdd/SectionFourAdd";
+import SectionFourAdd from "../../SectionFourAdd/SectionFourAdd";
 
-import MenuInSection from "../MenuInSection/MenuInSection";
+import MenuInSection from "../../MenuInSection/MenuInSection";
 
-import WhatIncluded from "../WhatIncluded/WhatIncluded";
-import bucket from "./../../assets/iconsThree/forIncluded/Bucket.svg";
-import hand from "./../../assets/iconsThree/forIncluded/Hand.svg";
-import cleaner from "./../../assets/iconsThree/forIncluded/Cleaner.svg";
-
-
-import w1 from "./../../assets/images/beforeAfter/w1.jpg"
-import w2 from "./../../assets/images/beforeAfter/w2.jpg"
-
-import SalesShow from "../SalesShow/SalesShow";
-import CalculatorOnPage from "../CalculatorOnPage/CalculatorOnPage";
-import BeforeAfterSmall from "../BeforeAfter/BeforeAfterSmall/BeforeAfterSmall";
+import WhatIncluded from "../../WhatIncluded/WhatIncluded";
+import bucket from "../../../assets/iconsThree/forIncluded/Bucket.svg";
+import hand from "../../../assets/iconsThree/forIncluded/Hand.svg";
+import cleaner from "../../../assets/iconsThree/forIncluded/Cleaner.svg";
 
 
+import w1 from "../../../assets/images/beforeAfter/w1.jpg"
+import w2 from "../../../assets/images/beforeAfter/w2.jpg"
 
-let DryCleaning = (props) => {
+import SalesShow from "../../SalesShow/SalesShow";
+import CalculatorOnPage from "../../CalculatorOnPage/CalculatorOnPage";
+import BeforeAfterSmall from "../../BeforeAfter/BeforeAfterSmall/BeforeAfterSmall";
+
+
+
+let Washing = (props) => {
     let innerMenu = React.createRef();
 
     let url = props.match.params.path;
@@ -77,4 +77,4 @@ let DryCleaning = (props) => {
     );
 }
 
-export default withRouter(DryCleaning);
+export default withRouter(Washing);

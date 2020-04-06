@@ -6,12 +6,34 @@ import * as axios from "axios";
 // });
 
 
-
 export const sendAPI = {
-    sendOrderForm(name, phone) {
-        return axios.post(`/sendOrderForm`, {name, phone});
+    sendOrderFormFull({
+                          name,
+                          phone,
+                          typeOfWork,
+                          meters,
+                          addServices,
+                          commonPrice
+                      }) {
+        return axios.post(`/sendOrderFormFull`, {name, phone, typeOfWork, meters, addServices, commonPrice});
+    },
+
+    sendAskForm({
+                    name,
+                    phone,
+                    email,
+                    question
+    }) {
+        return axios.post('/sendAskForm', {name, phone, email, question});
+    },
+
+    sendFeedback({
+                     name,
+                     phone,
+                     email,
+                     comment
+                 }) {
+        return axios.post('/sendFeedbackForm', {name, phone, email, comment});
     }
-    // logout() {
-    //     return instance.delete(`/auth/login`);
-    // }
+
 };

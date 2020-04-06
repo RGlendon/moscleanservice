@@ -1,4 +1,4 @@
-import React, {useEffect} from "react";
+import React from "react";
 import styles from "./Menu.module.css";
 import logoGreen from "./../../assets/logoGreen.svg";
 import closeMenu from "./../../assets/closeMenu.svg";
@@ -10,9 +10,11 @@ import {compose} from "redux";
 const Menu = (props) => {
     const layer = React.createRef();
 
-    useEffect(() => {
-        document.addEventListener('keydown', closeMenuEsc)
-    }, []);
+    // useEffect(() => {
+    //     document.addEventListener('keydown', closeMenuEsc)
+    // }, []);
+
+    document.addEventListener('keydown', closeMenuEsc);
 
     function closeMenuEsc(e) {
         if (e.keyCode === 27) {
@@ -33,8 +35,6 @@ const Menu = (props) => {
                 <img src={logoGreen} alt="логотип" className={styles.logoGreen}/>
                 <img src={closeMenu} alt="закрыть" className={styles.closebtn} onClick={() => {
                     props.toggleMenu(false)
-                }} onKeyDown={() => {
-                    console.log('dfdfsdf')
                 }}/>
                 <menu className={styles.sidenav} onClick={() => {props.toggleMenu(false)}}>
                     <NavLink to="/drycleaning/furniture" className={styles.link}>Химчистка мебели</NavLink>

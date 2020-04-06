@@ -1,8 +1,8 @@
 import React from "react";
 import styles from "./Footer.module.css";
 import logo from "./../../assets/LogoClear2.svg";
-import subscribe from "./../../assets/Mosclean.svg";
-import {Link, NavLink} from "react-router-dom";
+
+import {NavLink} from "react-router-dom";
 import vk from "./../../assets/contacts/VK.svg";
 import inst from "./../../assets/contacts/Inst.svg";
 import station from "./../../assets/contacts/Station.svg";
@@ -19,15 +19,15 @@ const Footer = () => {
                         <a href="/drycleaning/furniture" className={styles.link}>Химчистка</a>
                     </li>
                     <li className={styles.listItem}>
-                        <NavLink to="/cleaning/appart" className={styles.link}
+                        <NavLink to="/cleaning/maintenance" className={styles.link}
                                  activeClassName={styles.link_active}>Уборка</NavLink>
                     </li>
                     <li className={styles.listItem}>
-                        <NavLink to="/washing/windowplast" className={styles.link}
+                        <NavLink to="/washing/detailed" className={styles.link}
                                  activeClassName={styles.link_active}>Мытье окон / балконов</NavLink>
                     </li>
                     <li className={styles.listItem}>
-                        <NavLink to="/washing/windowplast" className={styles.link}
+                        <NavLink to="/washing/singlePrice" className={styles.link}
                                  activeClassName={styles.link_active}>Мытье фасадов</NavLink>
                     </li>
 

@@ -1,45 +1,45 @@
 import React from "react";
 import styles from "./DryCleaning.module.css"
-import {NavLink, Route, withRouter} from "react-router-dom";
+import {Route, withRouter} from "react-router-dom";
 
-import SectionOne from "../SectionOne/SectionOne";
-import firstBg from "../../assets/images/s1bg1.jpg";
-import s1bg2 from "../../assets/images/s1bg2.svg";
+import SectionOne from "../../SectionOne/SectionOne";
+import firstBg from "../../../assets/images/s1bg1.jpg";
+import s1bg2 from "../../../assets/images/s1bg2.svg";
 
-import SectionFourAdd from "../SectionFourAdd/SectionFourAdd";
+import SectionFourAdd from "../../SectionFourAdd/SectionFourAdd";
 
-import SectionTwoAddCarpet from "../OurServices/pages/SectionTwoAddCarpet";
+import SectionTwoAddCarpet from "../../OurServices/pages/SectionTwoAddCarpet";
 
 
 
-import MenuInSection from "../MenuInSection/MenuInSection";
+import MenuInSection from "../../MenuInSection/MenuInSection";
 
-import SectionTwoCommon from "../OurServices/pages/SectionTwoCommon";
-import sofa from "../../assets/iconsTwo/sofa2.svg";
-import sofa3 from "../../assets/iconsTwo/sofa3.jpg";
-import stool from "../../assets/iconsTwo/stool.svg";
-import chairSofa from "../../assets/iconsTwo/chair-sofa.svg";
-import chair from "../../assets/iconsTwo/Chair.svg";
-import chairComp from "../../assets/iconsTwo/chairComp.svg";
-import chair2 from "../../assets/iconsTwo/chair(2).svg";
+import SectionTwoCommon from "../../OurServices/pages/SectionTwoCommon";
+import sofa from "../../../assets/iconsTwo/sofa2.svg";
+import sofa3 from "../../../assets/iconsTwo/sofa3.jpg";
+import stool from "../../../assets/iconsTwo/stool.svg";
+import chairSofa from "../../../assets/iconsTwo/chair-sofa.svg";
+import chair from "../../../assets/iconsTwo/Chair.svg";
+import chairComp from "../../../assets/iconsTwo/chairComp.svg";
+import chair2 from "../../../assets/iconsTwo/chair(2).svg";
 
-import matressChild from "../../assets/iconsTwo/matress-child.svg";
-import matressSmall from "../../assets/iconsTwo/matress-small.svg";
-import matressBig from "../../assets/iconsTwo/mattress-big.svg";
+import matressChild from "../../../assets/iconsTwo/matress-child.svg";
+import matressSmall from "../../../assets/iconsTwo/matress-small.svg";
+import matressBig from "../../../assets/iconsTwo/mattress-big.svg";
 
-import WhatIncluded from "../WhatIncluded/WhatIncluded";
-import vacuum from "./../../assets/iconsThree/forIncluded/vacuum.svg"
-import search from "./../../assets/iconsThree/forIncluded/search.svg"
-import bottles from "./../../assets/iconsThree/forIncluded/bottles.svg"
-import hand from "./../../assets/iconsThree/forIncluded/Hand.svg"
-import bucket from "./../../assets/iconsThree/forIncluded/Bucket.svg"
+import WhatIncluded from "../../WhatIncluded/WhatIncluded";
+import vacuum from "../../../assets/iconsThree/forIncluded/vacuum.svg"
+import search from "../../../assets/iconsThree/forIncluded/search.svg"
+import bottles from "../../../assets/iconsThree/forIncluded/bottles.svg"
+import hand from "../../../assets/iconsThree/forIncluded/Hand.svg"
+import bucket from "../../../assets/iconsThree/forIncluded/Bucket.svg"
 
-import BeforeAfter from "../BeforeAfter/BeforeAfter";
-import f1 from "./../../assets/images/beforeAfter/f1.jpg"
-import f2 from "./../../assets/images/beforeAfter/f2.jpg"
-import f3 from "./../../assets/images/beforeAfter/f3.jpg"
+import BeforeAfter from "../../BeforeAfter/BeforeAfter";
+import f1 from "../../../assets/images/beforeAfter/f1.jpg"
+import f2 from "../../../assets/images/beforeAfter/f2.jpg"
+import f3 from "../../../assets/images/beforeAfter/f3.jpg"
 
-import SalesShow from "../SalesShow/SalesShow";
+import SalesShow from "../../SalesShow/SalesShow";
 
 
 

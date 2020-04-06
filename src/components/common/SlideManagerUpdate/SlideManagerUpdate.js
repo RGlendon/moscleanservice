@@ -1,9 +1,9 @@
-import React, {Component} from "react";
+import React from "react";
 import styles from "./SlideManagerUpdate.module.css";
 
 
 
-class SlideManagerUpdate extends Component {
+class SlideManagerUpdate extends React.Component {
     constructor({
                     commonCarousel,
                     containerCarousel,

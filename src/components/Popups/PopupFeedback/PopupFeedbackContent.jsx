@@ -11,7 +11,6 @@ import {
 } from "../../common/ValidatorForms/validators";
 import {Field, reduxForm} from "redux-form";
 import {sendAPI} from "../../api/api";
-import axios from "axios";
 
 
 const maxLength700 = maxLength(700);
@@ -43,23 +42,16 @@ FeedbackForm = reduxForm({form: 'askForm'})(FeedbackForm);
 
 
 const PopupFeedbackContent = (props) => {
-    // const onSubmit  = (formData) => {
-    //     let {name, phone} = formData;
-    //     sendAPI.sendOrderForm(name, phone);
-    // }
 
-    async function onSubmit(formData) {
-        // e.preventDefault();
-
-        const {name, phone, email, comment} = formData;
-
-        const form = await axios.post('/sendFeedbackForm', {
+    const onSubmit  = (formData) => {
+        let {name, phone, email, comment} = formData;
+        sendAPI.sendFeedback({
             name,
             phone,
             email,
             comment
-        })
-    }
+        });
+    };
 
   return (
       <div className={styles.common}>

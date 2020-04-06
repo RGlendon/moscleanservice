@@ -1,6 +1,6 @@
 import React from "react";
 import styles from "./SectionOneCard.module.css";
-import Calculator from "../../Calculator/Calculator";
+
 
 
 const SectionOneCard = (props) => {
@@ -14,9 +14,6 @@ const SectionOneCard = (props) => {
                 <p className={styles.copy}>MosCleanService &copy;</p>
                 <h1 className={styles.tagline}>{`${title} - `}<br/>{` не ваша забота`}</h1>
             </div>
-            {/*<div className={styles.calculator}>*/}
-            {/*    <Calculator/>*/}
-            {/*</div>*/}
         </div>
     );
 };
