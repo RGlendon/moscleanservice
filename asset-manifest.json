@@ -1,14 +1,14 @@
 {
   "files": {
     "main.css": "/moscleanservice/static/css/main.e5537f19.chunk.css",
-    "main.js": "/moscleanservice/static/js/main.6a5aa361.chunk.js",
-    "main.js.map": "/moscleanservice/static/js/main.6a5aa361.chunk.js.map",
+    "main.js": "/moscleanservice/static/js/main.260049ba.chunk.js",
+    "main.js.map": "/moscleanservice/static/js/main.260049ba.chunk.js.map",
     "runtime-main.js": "/moscleanservice/static/js/runtime-main.100cb92c.js",
     "runtime-main.js.map": "/moscleanservice/static/js/runtime-main.100cb92c.js.map",
     "static/js/2.064fc7b7.chunk.js": "/moscleanservice/static/js/2.064fc7b7.chunk.js",
     "static/js/2.064fc7b7.chunk.js.map": "/moscleanservice/static/js/2.064fc7b7.chunk.js.map",
     "index.html": "/moscleanservice/index.html",
-    "precache-manifest.3f54a8be5032c944baadf66e58b8491f.js": "/moscleanservice/precache-manifest.3f54a8be5032c944baadf66e58b8491f.js",
+    "precache-manifest.03e144a29d6426ab6169525ae5797c2f.js": "/moscleanservice/precache-manifest.03e144a29d6426ab6169525ae5797c2f.js",
     "service-worker.js": "/moscleanservice/service-worker.js",
     "static/css/main.e5537f19.chunk.css.map": "/moscleanservice/static/css/main.e5537f19.chunk.css.map",
     "static/js/2.064fc7b7.chunk.js.LICENSE.txt": "/moscleanservice/static/js/2.064fc7b7.chunk.js.LICENSE.txt",
@@ -78,6 +78,6 @@
     "static/js/runtime-main.100cb92c.js",
     "static/js/2.064fc7b7.chunk.js",
     "static/css/main.e5537f19.chunk.css",
-    "static/js/main.6a5aa361.chunk.js"
+    "static/js/main.260049ba.chunk.js"
   ]
 }
