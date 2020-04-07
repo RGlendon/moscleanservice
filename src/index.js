@@ -8,7 +8,8 @@ import {Provider} from "react-redux";
 import store from "./redux/store";
 
 ReactDOM.render(
-    <BrowserRouter>
+    //указал basename для заливки проекта на gh-pages
+    <BrowserRouter basename={process.env.PUBLIC_URL}>
         <Provider store={store}>
             <App/>
         </Provider>
